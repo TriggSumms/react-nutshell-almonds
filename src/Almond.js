@@ -14,15 +14,6 @@ function Almond() {
         <NavBar />
         <ApplicationViews />
         </div>
-        <img src= "https://camo.githubusercontent.com/7d7ed75be5396d7084dae1423beb07158eabc9a2/68747470733a2f2f692e696d6775722e636f6d2f426531653463372e706e67" className="Almond-logo" alt="logo" />
-        <a
-          className="Almond-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
