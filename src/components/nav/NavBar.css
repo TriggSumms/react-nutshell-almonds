@@ -1,4 +1,5 @@
 small {
+<<<<<<< HEAD
   font-size: 75%;
 }
 
@@ -38,3 +39,37 @@ nav .container li {
 .nav-link:hover {
   color: maroon;
 }
+=======
+    font-size: 75%;
+  }
+  
+  
+  nav .container {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  nav .container li {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: cornsilk;
+    box-sizing: border-box;
+    background-color: cornflowerblue;
+    list-style-type: none;
+  }
+  
+  .nav-link {
+    color: cornsilk;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: maroon;
+  }
+
+  
+>>>>>>> f25596576c3eba581d3e820fd89942a18e380c2f

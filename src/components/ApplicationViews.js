@@ -2,6 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import Login from "./auth/Login";
+import FriendList from "./friend/FriendList"
 
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
@@ -23,8 +24,19 @@ const ApplicationViews = () => {
         } else { 
             return <Redirect to="/login" />
         }
+<<<<<<< HEAD
       }}/>
       <Route
+=======
+    }}/>
+    <Route 
+    path="/home"
+    render={props => {
+        return <FriendList />;
+    }}
+    />
+    <Route
+>>>>>>> f25596576c3eba581d3e820fd89942a18e380c2f
         exact
         path="/articles"
         render={props => {
