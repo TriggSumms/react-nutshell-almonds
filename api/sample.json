@@ -67,15 +67,15 @@
     ],
     "tasks": [
       {
-        "taskName": "Sample",
-        "expectedCompletionDate": "2020-07-03",
+        "name": "Sample",
+        "completeDate": "2020-07-03",
         "completeStatus": false,
         "userId": 1,
         "id": 1
       },
       {
-        "taskName": "Sample2",
-        "expectedCompletionDate": "2020-07-04",
+        "name": "Sample2",
+        "completeDate": "2020-07-04",
         "completeStatus": false,
         "userId": 2,
         "id": 2
