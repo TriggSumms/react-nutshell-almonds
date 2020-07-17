@@ -1,9 +1,10 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import ArticleList from "./article/ArticleList"
 
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
   return (
     <React.Fragment>
       <Route
@@ -11,6 +12,12 @@ const ApplicationViews = () => {
         path="/home"
         render={props => {
           return <Home />;
+        }}
+      />
+      <Route
+        path="/articles"
+        render={props => {
+          return <ArticleList />;
         }}
       />
     </React.Fragment>
