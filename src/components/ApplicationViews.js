@@ -24,40 +24,35 @@ const ApplicationViews = () => {
         } else { 
             return <Redirect to="/login" />
         }
-<<<<<<< HEAD
       }}/>
       <Route
-=======
-    }}/>
-    <Route 
-    path="/home"
-    render={props => {
-        return <FriendList />;
-    }}
-    />
-    <Route
->>>>>>> f25596576c3eba581d3e820fd89942a18e380c2f
+        path="/home"
+        render={props => {
+            return <FriendList />;
+      }}
+      />
+      <Route
         exact
         path="/articles"
         render={props => {
-            if (isAuthenticated()) {
-          return <Home />;//Home here is a placeholder value. 
-          //You would need to inserts and import articles once built
-        } else { 
+          if (isAuthenticated()) {
+            return <Home />;//Home here is a placeholder value. 
+        //You would need to inserts and import articles once built
+          } else { 
             return <Redirect to="/login" />
-        }
-      }}/>
+          }
+        }}/>
       <Route
         exact
         path="/events"
         render={props => {
           if (isAuthenticated()) {
-          return <Home />;//Home here is a placeholder value. 
+            return <Home />;//Home here is a placeholder value. 
           //You would need to inserts and import events once built
-        } else { 
-          return <Redirect to="/login" />
-        }
-      }}/>
+          } else { 
+            return <Redirect to="/login" />
+          }
+        }}/>
       <Route path="/login" component={Login} />
 
 {/*************** Tasks ***************/}
