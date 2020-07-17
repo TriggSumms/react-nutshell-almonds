@@ -2,6 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import Login from "./auth/Login";
+import FriendList from "./friend/FriendList"
 
 // Check if credentials are in session storage returns true/false
 //Redirects to login if nothing in session storage.
@@ -20,6 +21,12 @@ const ApplicationViews = () => {
             return <Redirect to="/login" />
         }
     }}/>
+    <Route 
+    path="/home"
+    render={props => {
+        return <FriendList />;
+    }}
+    />
     <Route
         exact
         path="/articles"
