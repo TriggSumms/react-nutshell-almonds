@@ -6,5 +6,14 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/friends`).then(result => result.json())
-  }
+  },
+  post(newFriend) {
+    return fetch(`${remoteURL}/friends`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newFriend)
+    }).then(data => data.json())
+}
 }

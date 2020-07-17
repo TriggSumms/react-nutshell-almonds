@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import FriendCard from './FriendCard';
 import FriendManager from '../../modules/FriendManager';
 
-const FriendList = () => {
+const FriendList = (props) => {
   // The initial state is an empty array
   const [friends, setFriends] = useState([]);
 
@@ -20,11 +20,22 @@ const FriendList = () => {
     getFriends();
   }, []);
 
+  //add this button above your display of animal cards
+
   // Finally we use map() to "loop over" the friends array to show a list of animal cards
   return (
+      <div>
+    <section className="section-content">
+    <button type="button"
+        className="btn"
+        onClick={() => {props.history.push("/friends/new")}}>
+        Add Friend!
+    </button>
+  </section>
     <div className="container-cards">
       {friends.map(friend => 
       <FriendCard key={friend.id} friend={friend} />)}
+    </div>
     </div>
   );
 };

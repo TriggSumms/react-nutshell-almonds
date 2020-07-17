@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/Home";
 import Login from "./auth/Login";
 import FriendList from "./friend/FriendList"
+import FriendForm from "./friend/FriendForm"
 
 // Check if credentials are in session storage returns true/false
 //Redirects to login if nothing in session storage.
@@ -21,10 +22,13 @@ const ApplicationViews = () => {
             return <Redirect to="/login" />
         }
     }}/>
+    <Route path="/friends/new" render={(props) => {
+        return <FriendForm {...props} />
+    }}/>
     <Route 
-    path="/home"
+    exact path="/home"
     render={props => {
-        return <FriendList />;
+        return <FriendList {...props}/>;
     }}
     />
     <Route
