@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Almond from './Almond';
+import Almond from './components/Almond';
 
 test('renders learn react link', () => {
   const { getByText } = render(<Almond />);
