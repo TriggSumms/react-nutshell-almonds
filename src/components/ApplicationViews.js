@@ -42,49 +42,49 @@ const ApplicationViews = (props) => {
             <Route
                 path="/articles/new"
                 render={(props) => {
-                    return <ArticleForm {... props} />
+                    return <ArticleForm {...props} />
                 }} />
 
 
-    <Route
-        exact
-        path="/events"
-        render={props => {
-                if (isAuthenticated()) {
-                    return <Home />;//Home here is a placeholder value. 
-                    //You would need to inserts and import events once built
-                } else {
-                    return <Redirect to="/login" />
-                }
-            }}/>
-      <Route 
-        exact 
-        path="/tasks" 
-        render={props => {
-          if (isAuthenticated()) {
-            return <TaskList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
-      }} />
+            <Route
+                exact
+                path="/events"
+                render={props => {
+                    if (isAuthenticated()) {
+                        return <Home />;//Home here is a placeholder value. 
+                        //You would need to inserts and import events once built
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+                }} />
+            <Route
+                exact
+                path="/tasks"
+                render={props => {
+                    if (isAuthenticated()) {
+                        return <TaskList {...props} />
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+                }} />
 
-      <Route 
-        path="/tasks/new" 
-        render={(props) => {
-        return <TaskForm {...props} />
-      }} />
+            <Route
+                path="/tasks/new"
+                render={(props) => {
+                    return <TaskForm {...props} />
+                }} />
 
-      <Route 
-        path="/tasks/:taskId(\d+)/edit" 
-        render={props => {
-          if (isAuthenticated()) {
-            return <TaskEditForm {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
-      }} />
+            <Route
+                path="/tasks/:taskId(\d+)/edit"
+                render={props => {
+                    if (isAuthenticated()) {
+                        return <TaskEditForm {...props} />
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+                }} />
             <Route path="/login" component={Login} />
         </React.Fragment>
     );
-    }
+}
 export default ApplicationViews;

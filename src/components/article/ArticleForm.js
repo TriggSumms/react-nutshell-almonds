@@ -8,10 +8,7 @@ const ArticleForm = props => {
 
   //Tracks entries into text boxes
   const handleFieldChange = evt => {
-      console.log("what is evt", evt)
     const stateToChange = { ...article };
-    console.log("stateToChange", stateToChange)
-    console.log("evt.target.id", evt.target.id)
     stateToChange[evt.target.id] = evt.target.value;
     setArticle(stateToChange);
   };

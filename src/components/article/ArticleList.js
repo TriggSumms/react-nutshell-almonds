@@ -14,17 +14,17 @@ const ArticleList = (props) => {
     });
   };
 
-  const deleteArticle = (id) => {
-    ArticleManager.delete(id)
-      .then(() => ArticleManager.getAll().then(setArticles));
-  };
-
-
+  
+  
   // got the articles from the API on the component's first render
   useEffect(() => {
     getArticles();
   }, []);
-
+  
+  const deleteArticle = (id) => {
+    ArticleManager.delete(id)
+      .then(() => ArticleManager.getAll().then(setArticles));
+  };
 
   // Mapping through the articles array to create a list of article cards
   return (
@@ -32,7 +32,7 @@ const ArticleList = (props) => {
   <section className="section-content">
   <button type="button"
       className="btn"
-      onClick={() => {props.history.push("/articles/new")}}>
+      onClick={() => { props.history.push("/articles/new") }}>
       Save New Article
   </button>
 </section>
@@ -43,7 +43,7 @@ const ArticleList = (props) => {
       key={article.id} 
       article={article}
       deleteArticle = {deleteArticle}
-      {... props}
+      {...props}
        />)}
   </div>
   </>

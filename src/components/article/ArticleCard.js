@@ -1,6 +1,6 @@
 import React from "react";
 import "./ArticleCard.css"
-import ArticleManager from "./../../modules/ArticleManager"
+
 
 const ArticleCard = props => {
   return (
