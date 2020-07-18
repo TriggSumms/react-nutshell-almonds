@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
-import './index.css';
-import Almond from './Almond';
+import Almond from './components/Almond';
 
 
 ReactDOM.render(

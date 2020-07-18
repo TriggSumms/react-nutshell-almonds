@@ -1,16 +1,7 @@
 small {
     font-size: 75%;
   }
-  
-  header {
-    background-color: orchid;
-    border: cornflowerblue solid 3px;
-  }
-  
-  .site-title {
-    color: ghostwhite;
-    text-align: center;
-  }
+
   
   nav .container {
     display: flex;
@@ -38,3 +29,5 @@ small {
   .nav-link:hover {
     color: maroon;
   }
+
+  
