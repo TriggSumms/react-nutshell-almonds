@@ -14,39 +14,40 @@ const ArticleList = (props) => {
     });
   };
 
-  
-  
+
+
   // got the articles from the API on the component's first render
-  useEffect(() => {
-    getArticles();
-  }, []);
-  
+
   const deleteArticle = (id) => {
+    console.log("deleting" + id)
     ArticleManager.delete(id)
       .then(() => ArticleManager.getAll().then(setArticles));
   };
+  useEffect(() => {
+    getArticles();
+  }, []);
 
   // Mapping through the articles array to create a list of article cards
   return (
     <>
-  <section className="section-content">
-  <button type="button"
-      className="btn"
-      onClick={() => { props.history.push("/articles/new") }}>
-      Save New Article
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => { props.history.push("/articles/new") }}>
+          Save New Article
   </button>
-</section>
+      </section>
 
-    <div className="container-cards">
-    {articles.map(article =>
-      <ArticleCard 
-      key={article.id} 
-      article={article}
-      deleteArticle = {deleteArticle}
-      {...props}
-       />)}
-  </div>
-  </>
+      <div className="container-cards">
+        {articles.map(article =>
+          <ArticleCard
+            key={article.id}
+            article={article}
+            deleteArticle={deleteArticle}
+            {...props}
+          />)}
+      </div>
+    </>
   );
 };
 export default ArticleList

@@ -3,7 +3,7 @@ import ArticleManager from '../../modules/ArticleManager';
 import './ArticleForm.css'
 
 const ArticleForm = props => {
-  const [article, setArticle] = useState({ title: "", synopsis: "", url: "",time:"",userId:"" });
+  const [article, setArticle] = useState({ title: "", synopsis: "", url: "",time:"1",userId:"1" });
   const [isLoading, setIsLoading] = useState(false);
 
   //Tracks entries into text boxes

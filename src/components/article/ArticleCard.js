@@ -10,7 +10,7 @@ const ArticleCard = props => {
                         <div className="nameDate">
                             
                             
-                            {props.article.title} 
+                            
                         </div>    
                         <div className="article__deleteButton">
                             {/* <button id="deleteArticleBtn__${props.id}" className="deleteBtn" type="button">&times;</button> */}

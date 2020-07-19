@@ -33,7 +33,7 @@ const ApplicationViews = (props) => {
                 path="/articles"
                 render={props => {
                     if (isAuthenticated()) {
-                        return <ArticleList />;//Home here is a placeholder value. 
+                        return <ArticleList {...props}/>;//Home here is a placeholder value. 
                         //You would need to inserts and import articles once built
                     } else {
                         return <Redirect to="/login" />
