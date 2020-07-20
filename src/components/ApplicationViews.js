@@ -15,6 +15,7 @@ import TaskEditForm from './task/TaskEditForm';
 import UserList from "./auth/UserList"
 
 
+
 // Check if credentials are in session storage returns true/false
 //Redirects to login if nothing in session storage.
 //const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
@@ -35,7 +36,11 @@ const ApplicationViews = (props) => {
       <Route path="/login" render={props => {
         return <Login setUser={setUser} {...props} />
       }} />
-     
+     <Route 
+      path="/home"
+      render={props => {
+        return <UserList {...props} />;
+      }} />
       <Route
         path="/home"
         render={props => {
