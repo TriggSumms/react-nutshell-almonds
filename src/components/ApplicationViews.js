@@ -12,6 +12,9 @@ import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
+import EventList from "./event/EventList";
+import EventForm from './event/EventForm';
+import EventEditForm from './event/EventEditForm';
 
 
 // Check if credentials are in session storage returns true/false
@@ -92,19 +95,30 @@ const ApplicationViews = (props) => {
 
       {/*************** EVENTS ***************/}
 
-      <Route
+        <Route
         exact
         path="/events"
         render={props => {
-          return <Home />;//Home here is a placeholder value. 
-          //You would need to inserts and import events once built
+          return <EventList {...props} />
+        }} />
+        
+        <Route
+        path="/events/new"
+        render={(props) => {
+          return <EventForm {...props} />
+        }} />
+        
+        <Route
+        path="/events/:eventId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <EventEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
 
-
-
-
-
-      {/*************** Tasks ******************/}
+      {/*************** TASKS ******************/}
       <Route
         exact
         path="/tasks"
@@ -127,6 +141,10 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
+
+
+
+
         </React.Fragment>
     );
 }
