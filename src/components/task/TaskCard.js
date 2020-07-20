@@ -8,7 +8,8 @@ const TaskCard = props => {
             <div className="card-content">
                 <h3>
                     <span className="card-taskname">{props.task.name}</span>
-                    <p>{props.task.completeStatus}</p>
+                    <p>Due: {props.task.completeDate}</p>
+                    <p>Status: {props.task.completeStatus ? "Complete" : "In progress"}</p>
                     <button type="button" onClick={() => props.history.push(`/tasks/${props.task.id}/edit`)}>Edit</button>
                     <button type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button>
                 </h3>

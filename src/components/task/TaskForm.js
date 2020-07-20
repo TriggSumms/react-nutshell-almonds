@@ -16,7 +16,7 @@ const TaskForm = props => {
     const constructNewTask = evt => {
         evt.preventDefault();
         if (task.name === "" || task.completeDate === "") {
-            window.alert("Please input a task name and date");
+            window.alert("Please complete all fields");
         } else {
             setIsLoading(true);
             // Create the task and redirect user to task list
@@ -59,7 +59,7 @@ const TaskForm = props => {
                             id="completeDate"
                             value={task.completeDate}
                         />
-                        <label htmlFor="phoneNumber">Date</label>
+                        <label htmlFor="completeDate">Date</label>
                     </div>
 
                     <div className="alignRight">

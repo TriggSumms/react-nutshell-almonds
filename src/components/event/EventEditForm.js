@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from "react"
-import TaskManager from "../../modules/TaskManager"
+import EventManager from "../../modules/EventManager"
 
-const TaskEditForm = props => {
-    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: "" });
+const EventEditForm = props => {
+    const [event, setEvent] = useState({ name: "", date: "", location: "", userId: "" });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
-        const stateToChange = { ...task };
+        const stateToChange = { ...event };
         stateToChange[evt.target.id] = evt.target.value;
-        setTask(stateToChange);
+        setEvent(stateToChange);
     };
 
-    const updateExistingTask = evt => {
+    const updateExistingEvent = evt => {
         evt.preventDefault()
         setIsLoading(true);
 
     // This is an edit, so we need the id
-    const editedTask = {
-        id: props.match.params.taskId,
-        name: task.name,
-        completeStatus: task.completeStatus,
-        completeDate: task.completeDate,
-        userId: task.userId
+    const editedEvent = {
+        id: props.match.params.eventId,
+        name: event.name,
+        date: event.date,
+        location: event.location,
+        userId: event.userId
     };
 
-    TaskManager.update(editedTask)
-        .then(() => props.history.push("/tasks"))
+    EventManager.update(editedEvent)
+        .then(() => props.history.push("/events"))
     }
 
     useEffect(() => {
-        TaskManager.get(props.match.params.taskId)
-            .then(task => {
-                setTask(task);
+        EventManager.get(props.match.params.eventId)
+            .then(event => {
+                setEvent(event);
                 setIsLoading(false);
             });
     }, []);
@@ -47,7 +47,7 @@ const TaskEditForm = props => {
                             className="form-control"
                             onChange={handleFieldChange}
                             id="userId"
-                            value={task.userId}
+                            value={event.userId}
                         />
 
                         <input
@@ -56,25 +56,35 @@ const TaskEditForm = props => {
                             className="form-control"
                             onChange={handleFieldChange}
                             id="name"
-                            value={task.name}
+                            value={event.name}
                         />
-                        <label htmlFor="name">Task name</label>
+                        <label htmlFor="name">Event name</label>
 
                         <input
                             type="date"
                             required
                             className="form-control"
                             onChange={handleFieldChange}
-                            id="completeDate"
-                            value={task.completeDate}
+                            id="date"
+                            value={event.date}
                         />
-                        <label htmlFor="completeDate">Due date</label>
+                        <label htmlFor="date">Date</label>
+
+                        <input
+                            type="text"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="location"
+                            value={event.location}
+                        />
+                        <label htmlFor="location">Location</label>
 
                     </div>
                     <div className="alignRight">
                         <button
                             type="button" disabled={isLoading}
-                            onClick={updateExistingTask}
+                            onClick={updateExistingEvent}
                             className="btn btn-primary"
                         >Submit</button>
                     </div>
@@ -84,4 +94,4 @@ const TaskEditForm = props => {
     );
 }
 
-export default TaskEditForm
+export default EventEditForm
