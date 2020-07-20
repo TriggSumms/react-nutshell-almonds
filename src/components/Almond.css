@@ -55,3 +55,12 @@ img {
   justify-content: space-between;
 }
 
+.friend-section-content {
+  padding: 1.4em;
+}
+
+.friend-container-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+

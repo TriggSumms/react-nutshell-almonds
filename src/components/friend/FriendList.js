@@ -31,33 +31,36 @@ const FriendList = (props) => {
   // Finally we use map() to "loop over" the friends array to show a list of animal cards
   return (
     <>
-        <section className="section-content">
-          <h1>Your Friends:</h1>
-           
-        </section>
+      <section className="friend-section-content">
+        <h1>Your Friends:</h1>
 
-        <div className="container-cards">
-           {/* edit this for card appearance */}
-            {friends.map(friend => {
-                if (friend.userId == sessionStorage.getItem("activeUser")) {
-                    return (
-                        <FriendCard
-                            key={friend.id}
-                            friend={friend}
-                            deleteFriend={deleteFriend}
-                            {...props} 
-                        />
-                    )
-                }
-               
-            })}
-             <button type="button"
-                className="btn"
-                onClick={() => { props.history.push("/friends/new") }}>
-                Add a Friend
+      </section>
+
+      <div className="friend-container-cards">
+        {/* edit this for card appearance */}
+        {friends.map(friend => {
+          if (friend.userId == sessionStorage.getItem("activeUser")) {
+            return (
+              <FriendCard
+                key={friend.id}
+                friend={friend}
+                deleteFriend={deleteFriend}
+                {...props}
+              />
+            )
+          }
+
+        })}
+
+      </div>
+      <div>
+        <button type="button"
+          className="btn"
+          onClick={() => { props.history.push("/friends/new") }}>
+          Add a Friend
             </button>
-        </div>
+      </div>
     </>
-);
+  );
 };
 export default FriendList

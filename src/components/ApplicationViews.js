@@ -13,6 +13,7 @@ import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
 import UserList from "./auth/UserList"
+import UserEditForm from "./auth/UserEditForm"
 
 
 
@@ -41,6 +42,15 @@ const ApplicationViews = (props) => {
       render={props => {
         return <UserList {...props} />;
       }} />
+      <Route
+        path="/users/:userId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <UserEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }} />
       <Route
         path="/home"
         render={props => {
