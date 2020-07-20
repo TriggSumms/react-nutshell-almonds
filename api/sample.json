@@ -85,7 +85,6 @@
   ],
   "friends": [
     {
-      "activeUserId": 2,
       "userId": 1,
       "id": 1
     },
@@ -93,15 +92,6 @@
       "activeUserId": 1,
       "userId": 3,
       "id": 2
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "name": "User 1 Task yeha",
-      "completeStatus": false,
-      "completeDate": "2020-07-03",
-      "userId": 1
     },
     {
       "name": "Another User 1 Task",
