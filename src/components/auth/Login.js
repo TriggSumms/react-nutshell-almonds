@@ -53,7 +53,7 @@ const Login = props => {
       <div className="formgrid">
         <input onChange={handleFieldChange} type="email"
           id="email"
-          placeholder="Email address"
+          placeholder="email@...com"
           required="" autoFocus="" />
         <label htmlFor="inputEmail">Email address</label>
 
@@ -62,6 +62,12 @@ const Login = props => {
           placeholder="Password"
           required="" />
         <label htmlFor="inputPassword">Password</label>
+
+        <input onChange={handleFieldChange} type="userName"
+          id="userName"
+          placeholder="User Name"
+          required="" />
+        <label htmlFor="registerInputUserName">Create Your User Name</label>
       </div>
       <button type="submit">Create Account</button>
     </fieldset>
