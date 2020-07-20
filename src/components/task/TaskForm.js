@@ -3,7 +3,7 @@ import TaskManager from '../../modules/TaskManager';
 import './TaskForm.css';
 
 const TaskForm = props => {
-    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: "" });
+    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -25,8 +25,9 @@ const TaskForm = props => {
         }
     };
 
-    task.userId = sessionStorage.getItem("activeUser")
-
+    const activeId = sessionStorage.getItem("activeUser")
+    task.userId = parseInt(activeId)
+    
     return (
         <>
             <form>

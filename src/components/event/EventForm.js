@@ -3,7 +3,7 @@ import EventManager from '../../modules/EventManager';
 // import './EventForm.css';
 
 const EventForm = props => {
-    const [event, setEvent] = useState({ name: "", date: "", location: "", userId: "" });
+    const [event, setEvent] = useState({ name: "", date: "", location: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -25,7 +25,8 @@ const EventForm = props => {
         }
     };
 
-    event.userId = sessionStorage.getItem("activeUser")
+    const activeId = sessionStorage.getItem("activeUser")
+    event.userId = parseInt(activeId)
 
     return (
         <>

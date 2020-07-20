@@ -38,7 +38,7 @@ const EventList = (props) => {
 
             <div className="container-cards">
                 {events.map(event => {
-                    if (event.userId === sessionStorage.getItem("activeUser")) {
+                    if (event.userId === parseInt(sessionStorage.getItem("activeUser"))) {
                         return (
                             <EventCard
                                 key={event.id}

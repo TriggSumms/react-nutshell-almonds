@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import EventManager from "../../modules/EventManager"
 
 const EventEditForm = props => {
-    const [event, setEvent] = useState({ name: "", date: "", location: "", userId: "" });
+    const [event, setEvent] = useState({ name: "", date: "", location: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
