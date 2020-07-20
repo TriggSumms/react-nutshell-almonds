@@ -12,6 +12,7 @@ import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
+import UserList from "./auth/UserList"
 
 
 // Check if credentials are in session storage returns true/false
@@ -34,6 +35,7 @@ const ApplicationViews = (props) => {
       <Route path="/login" render={props => {
         return <Login setUser={setUser} {...props} />
       }} />
+     
       <Route
         path="/home"
         render={props => {

@@ -4,7 +4,6 @@
 /*Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
@@ -54,4 +53,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border: solid; color: black;
 }
+

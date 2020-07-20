@@ -46,7 +46,8 @@ const MessageList = (props) => {
 
     return (
         <>
-            <div><MessageForm {...props} /></div>
+            <h1>Your Messages:</h1>
+            
             <div className="container-cards">
                 {messages.map(message => {
                     if (message.userId == sessionStorage.getItem("activeUser")) {
@@ -59,6 +60,7 @@ const MessageList = (props) => {
                             />
                             )}
                             })}
+                            <div><MessageForm {...props} /></div>
             </div>
      
 
