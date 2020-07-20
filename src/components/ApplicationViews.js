@@ -21,93 +21,95 @@ const ApplicationViews = (props) => {
   const setUser = props.setUser;
   return (
     <React.Fragment>
-        <Route
-         exact
-         path="/home"
+      <Route
+        exact
+        path="/home"
         render={(props) => {
-            return <Home />;
-    }}/>
-        {/* LOGIN ROUTE */}
-        {/* //pass the `setUser` function to Login component. */}
-        <Route path="/login" render={props => {
-                return <Login setUser={setUser} {...props} />
-    }}/>
+          return <Home />;
+        }} />
+      {/* LOGIN ROUTE */}
+      {/* //pass the `setUser` function to Login component. */}
+      <Route path="/login" render={props => {
+        return <Login setUser={setUser} {...props} />
+      }} />
       <Route
         path="/home"
         render={props => {
-            return <FriendList {...props} />;
-    }}/>
+          return <FriendList {...props} />;
+        }} />
 
- <Route
+      <Route
         exact path="/home"
         render={props => {
-            if (hasUser) {
-              return <MessageList {...props} 
-      />} 
-            else {
-              return <Redirect to="/home" />  
-            }
-    }}/>
-    
-<Route 
-        path="/messages/:messageId(\d+)/edit" 
+          if (hasUser) {
+            return <MessageList {...props}
+            />
+          }
+          else {
+            return <Redirect to="/home" />
+          }
+        }} />
+
+      <Route
+        path="/messages/:messageId(\d+)/edit"
         render={props => {
           if (hasUser) {
             return <MessageEditForm {...props}
-       />}
-           else {
+            />
+          }
+          else {
             return <Redirect to="/home" />
           }
-    }}/> 
+        }} />
 
 
 
 
-{/*************** ARTICLES ***************/}
+      {/*************** ARTICLES ***************/}
       <Route
         exact
         path="/articles"
         render={props => {
-           return <Home />;//Home here is a placeholder value. 
-        //You would need to inserts and import articles once built
-    }}/>
-{/*************** EVENTS ***************/}
+          return <Home />;//Home here is a placeholder value. 
+          //You would need to inserts and import articles once built
+        }} />
+      {/*************** EVENTS ***************/}
 
       <Route
         exact
         path="/events"
         render={props => {
-            return <Home />;//Home here is a placeholder value. 
+          return <Home />;//Home here is a placeholder value. 
           //You would need to inserts and import events once built
-    }}/>
-      
+        }} />
 
 
 
 
-{/*************** Tasks ***************NOTE FROM TRIGG:I ONLY PASSed THE "hasUSer" in place of "isAuthenticated"*******/}
-      <Route 
-        exact 
-        path="/tasks" 
+
+      {/*************** Tasks ***************NOTE FROM TRIGG:I ONLY PASSed THE "hasUSer" in place of "isAuthenticated"*******/}
+      <Route
+        exact
+        path="/tasks"
         render={props => {
-            return <TaskList {...props} />
-    }}/>
+          return <TaskList {...props} />
+        }} />
 
-      <Route 
-        path="/tasks/new" 
+      <Route
+        path="/tasks/new"
         render={(props) => {
-        return <TaskForm {...props} />
-    }}/>
+          return <TaskForm {...props} />
+        }} />
 
-      <Route 
-        path="/tasks/:taskId(\d+)/edit" 
+      <Route
+        path="/tasks/:taskId(\d+)/edit"
         render={props => {
           if (hasUser) {
             return <TaskEditForm {...props} />
           } else {
             return <Redirect to="/login" />
           }
-    }}/>
+        }} />
 
 
     </React.Fragment>

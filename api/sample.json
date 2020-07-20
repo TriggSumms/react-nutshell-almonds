@@ -67,46 +67,50 @@
   ],
   "tasks": [
     {
-      "name": "OKIE DOKIE",
+      "name": "User 1 Task",
+      "completeDate": "2020-07-03",
       "completeStatus": false,
-      "completeDate": "2020-07-08",
-      "id": 5
+      "userId": 1,
+      "id": 1
     },
     {
-      "name": "Sample1",
+      "name": "Another User 1 Task",
+      "completeDate": "2020-07-03",
       "completeStatus": false,
-      "completeDate": "2020-07-01",
-      "id": 6
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "User 2 Task",
+      "completeDate": "2020-07-04",
+      "completeStatus": false,
+      "userId": 2,
+      "id": 3
     }
   ],
   "messages": [
     {
-      "entry": "TYO BOI",
-      "entryDate": "7/19/20, 7:22:57 PM",
+      "entry": "YUS",
+      "entryDate": "7/20/20, 8:04:21 AM",
+      "id": 1,
+      "userId": "1"
+    },
+    {
+      "entry": "ddddd",
+      "entryDate": "7/20/20, 8:04:31 AM",
+      "id": 2,
+      "userId": "1"
+    },
+    {
+      "entry": "yus sir",
+      "entryDate": "7/20/20, 8:13:03 AM",
       "id": 3,
-      "userId": 1
+      "userId": "1"
     },
     {
-      "id": 5,
-      "entry": "playa2",
-      "entryDate": "7/19/20, 7:39:25 PM(Message Edited)"
-    },
-    {
+      "entry": "ddddd",
+      "entryDate": "7/20/20, 9:01:59 AM",
       "id": 6,
-      "userId": 1,
-      "entryDate": "7/19/20, 7:39:57 PM(~Edited~)",
-      "entry": "alright now"
-    },
-    {
-      "entry": "HEllo World",
-      "entryDate": "7/19/20, 8:18:30 PM",
-      "id": 7,
-      "userId": 1
-    },
-    {
-      "entry": "okay 3",
-      "entryDate": "7/19/20, 9:42:10 PM",
-      "id": 8,
       "userId": "1"
     }
   ]

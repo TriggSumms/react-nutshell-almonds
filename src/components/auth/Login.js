@@ -18,15 +18,16 @@ const Login = props => {
         ...Let's just trust the user... That's a good idea, right????
 */
 
-   /*sessionStorage.setItem(
+   sessionStorage.setItem(
       "credentials",
       JSON.stringify(credentials)
         );
-        };
-    */
+        
+  
    //Input FROM Chris M.
    sessionStorage.setItem("credentials", JSON.stringify(credentials))
    sessionStorage.setItem("activeUser", 1)
+   //sessionStorage.setItem("activeUser", 2)
 
 
    
@@ -34,6 +35,8 @@ const Login = props => {
    props.setUser(credentials);
    props.history.push("/home");
   }
+
+
 
   /* This is representing our sign in and registration forms. 
   We can adjust the visualization and functionality as needed */

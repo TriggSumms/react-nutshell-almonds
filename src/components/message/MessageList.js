@@ -4,6 +4,8 @@ import MessageManager from '../../modules/MessageManager';
 import MessageForm from './MessageForm'
 //import {sort} from '../../modules/HelperModules'
 
+
+
 const MessageList = (props) => {
     // The initial state is an empty array
     const [messages, setMessages] = useState([]);

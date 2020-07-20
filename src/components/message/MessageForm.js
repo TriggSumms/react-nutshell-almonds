@@ -5,7 +5,7 @@ import MessageManager from '../../modules/MessageManager';
 
 
 
-//Method for Creating Time Stamp correctly...
+//Method for Creating Time Stamp in readeable form(mdn docs)...
 let timeStamp = new Intl.DateTimeFormat("en", {
     timeStyle: "medium",
     dateStyle: "short"
@@ -69,8 +69,7 @@ const MessageForm = props => {
                             id="entry"
                             placeholder="Write your message Here..."
                         ></input>
-                        {/* Not sure if date is needed here, might need to change to time stamp? */}
-                        {/*         <label htmlFor="entryDate">Entry Date</label>
+{/*         <label htmlFor="entryDate">Entry Date</label>
             <input
               type="date"
               required

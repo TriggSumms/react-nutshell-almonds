@@ -20,7 +20,6 @@ const MessageEditForm = props => {
         setIsLoading(true);
 
         //Created an easy tag to post to the return edit card.... for showing chats when they are edited     
-        //let timeStamp = new Date();
         const MessageChanged = "(~Edited~)"
 
         // This is an edit, so we need the id
