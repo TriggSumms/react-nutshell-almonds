@@ -30,14 +30,14 @@
       "name": "Sample",
       "date": "2020-07-03",
       "location": "Sample",
-      "userId": 1,
+      "userId": "1",
       "id": 1
     },
     {
       "name": "Sample2",
       "date": "2020-07-034",
       "location": "Sample2",
-      "userId": 2,
+      "userId": "2",
       "id": 2
     }
   ],
