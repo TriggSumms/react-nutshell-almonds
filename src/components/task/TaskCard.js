@@ -2,6 +2,7 @@ import React from "react";
 import "./Task.css";
 
 const TaskCard = props => {
+
     return (
         <div className="card">
             <div className="card-content">
@@ -15,5 +16,6 @@ const TaskCard = props => {
         </div>
     );
 };
+
 
 export default TaskCard;
