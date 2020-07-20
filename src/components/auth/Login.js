@@ -1,26 +1,25 @@
 import React, { useState } from "react"
 
 const Login = props => {
+  
   const [credentials, setCredentials] = useState({ email: "", password: "" });
-
+  
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-
+  
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
+    For now, just store the email and password that
+    the customer enters into session storage.
+    ...Let's just trust the user... That's a good idea, right????
     */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+   sessionStorage.setItem("credentials", JSON.stringify(credentials))
+   sessionStorage.setItem("activeUser", 1)
   }
 
   /* This is representing our sign in and registration forms. 
@@ -47,6 +46,7 @@ const Login = props => {
         <button type="submit">Sign in</button>
       </fieldset>
     </form>
+
     <form onSubmit={handleLogin}>
     <fieldset>
       <h3>New User? Register an Account</h3>

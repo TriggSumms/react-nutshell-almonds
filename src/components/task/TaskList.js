@@ -17,7 +17,7 @@ const TaskList = (props) => {
 
     // got the tasks from the API on the component's first render
     useEffect(() => {
-        getTasks();
+        getTasks()
     }, []);
 
     const deleteTask = id => {
@@ -28,23 +28,27 @@ const TaskList = (props) => {
     // Finally we use map() to "loop over" the tasks array to show a list of task cards
     return (
         <>
-
             <section className="section-content">
                 <button type="button"
                     className="btn"
                     onClick={() => { props.history.push("/tasks/new") }}>
                     New Task
-        </button>
+                </button>
             </section>
 
             <div className="container-cards">
-                {tasks.map(task =>
-                    <TaskCard
-                        key={task.id}
-                        task={task}
-                        deleteTask={deleteTask}
-                        {...props}
-                    />)}
+                {tasks.map(task => {
+                    if (task.userId == sessionStorage.getItem("activeUser")) {
+                        return (
+                            <TaskCard
+                                key={task.id}
+                                task={task}
+                                deleteTask={deleteTask}
+                                {...props} 
+                            />
+                        )
+                    }
+                })}
             </div>
         </>
     );
