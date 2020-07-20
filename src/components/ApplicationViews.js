@@ -1,6 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import ArticleList from "./article/ArticleList"
+import ArticleForm from "./article/ArticleForm"
 import Login from "./auth/Login";
 import FriendList from "./friend/FriendList"
 import MessageList from "./message/MessageList"
@@ -67,12 +69,22 @@ const ApplicationViews = (props) => {
 
       {/*************** ARTICLES ***************/}
       <Route
-        exact
-        path="/articles"
-        render={props => {
-          return <Home />;//Home here is a placeholder value. 
-          //You would need to inserts and import articles once built
-        }} />
+            exact
+            path="/articles"
+            render={props => {
+                if (hasUser) {
+                    return <ArticleList {...props}/>;//Home here is a placeholder value. 
+                    //You would need to inserts and import articles once built
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }} />
+        <Route
+            path="/articles/new"
+            render={(props) => {
+                return <ArticleForm {...props} />
+            }} />
+
       {/*************** EVENTS ***************/}
 
       <Route
@@ -87,7 +99,7 @@ const ApplicationViews = (props) => {
 
 
 
-      {/*************** Tasks ***************NOTE FROM TRIGG:I ONLY PASSed THE "hasUSer" in place of "isAuthenticated"*******/}
+      {/*************** Tasks ******************/}
       <Route
         exact
         path="/tasks"
@@ -110,10 +122,9 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
-
-
-    </React.Fragment>
-  );
-};
-
+        </React.Fragment>
+    );
+}
 export default ApplicationViews;
+
+

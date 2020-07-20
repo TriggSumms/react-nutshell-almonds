@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import TaskManager from "../../modules/TaskManager"
 
 const TaskEditForm = props => {
-    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "" });
+    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: "" });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -20,7 +20,8 @@ const TaskEditForm = props => {
         id: props.match.params.taskId,
         name: task.name,
         completeStatus: task.completeStatus,
-        completeDate: task.completeDate
+        completeDate: task.completeDate,
+        userId: task.userId
     };
 
     TaskManager.update(editedTask)
@@ -40,6 +41,15 @@ const TaskEditForm = props => {
             <form>
                 <fieldset>
                     <div className="formgrid">
+                        <input
+                            type="hidden"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="userId"
+                            value={task.userId}
+                        />
+
                         <input
                             type="text"
                             required

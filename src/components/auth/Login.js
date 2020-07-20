@@ -9,7 +9,7 @@ const Login = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-
+  
   const handleLogin = (e) => {
     e.preventDefault();
 /*
@@ -62,6 +62,7 @@ const Login = props => {
         <button type="submit">Sign in</button>
       </fieldset>
     </form>
+
     <form onSubmit={handleLogin}>
     <fieldset>
       <h3>New User? Register an Account</h3>
