@@ -8,7 +8,7 @@ import FriendList from "./friend/FriendList"
 import MessageList from "./message/MessageList"
 import MessageForm from "./message/MessageForm"
 import MessageEditForm from "./message/MessageEditForm"
-
+import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
@@ -39,6 +39,11 @@ const ApplicationViews = (props) => {
         render={props => {
           return <FriendList {...props} />;
         }} />
+           <Route
+            path="/friends/new"
+            render={(props) => {
+                return <FriendForm {...props} />
+            }} />
 
       <Route
         exact path="/home"
@@ -126,3 +131,5 @@ const ApplicationViews = (props) => {
     );
 }
 export default ApplicationViews;
+
+

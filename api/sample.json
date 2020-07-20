@@ -1,103 +1,125 @@
 {
-    "articles": [
-        {
-            "title": "Sample",
-            "synopsis": "Sample",
-            "url": "https://www.google.com",
-            "time": "17:31:41 GMT-0500 (Central Daylight Time)",
-            "userId": 1,
-            "id": 1
-        },
-        {
-            "title": "Sample2",
-            "synopsis": "Sample2",
-            "url": "google.com",
-            "time": "17:41:41 GMT-0500 (Central Daylight Time)",
-            "userId": 2,
-            "id": 2
-        },
-        {
-            "title": "Sample3",
-            "synopsis": "Sample3",
-            "url": "google.com",
-            "time": "17:51:41 GMT-0500 (Central Daylight Time)",
-            "userId": 3,
-            "id": 3
-        },
-        {
-            "title": "Sample4",
-            "synopsis": "Sample4",
-            "url": "google.com",
-            "time": "18:01:41 GMT-0500 (Central Daylight Time)",
-            "userId": 1,
-            "id": 4
-        }
-    ],
-    "users": [
-        {
-            "user": "Joe",
-            "email": "joe@joe.com",
-            "password": "test",
-            "id": 1
-        },
-        {
-            "user": "Test",
-            "email": "test@test.com",
-            "password": "test",
-            "id": 2
-        },
-        {
-            "user": "Testing",
-            "email": "testing@testing.com",
-            "password": "test",
-            "id": 3
-        }
-    ],
-    "friends": [
-        {
-            "activeUserId": 2,
-            "userId": 1,
-            "id": 1
-        },
-        {
-            "activeUserId": 1,
-            "userId": 3,
-            "id": 2
-        }
-    ],
-    "tasks": [
-      {
-        "name": "User 1 Task",
-        "completeDate": "2020-07-03",
-        "completeStatus": false,
-        "userId": 1,
-        "id": 1
-      },
-      {
-        "name": "Another User 1 Task",
-        "completeDate": "2020-07-03",
-        "completeStatus": false,
-        "userId": 1,
-        "id": 2
-      },
-      {
-        "name": "User 2 Task",
-        "completeDate": "2020-07-04",
-        "completeStatus": false,
-        "userId": 2,
-        "id": 3
-      }
-    ],
-    "messages": [
-        {
-            "userId": 1,
-            "message": "Sample",
-            "id": 1
-        },
-        {
-            "userId": 2,
-            "message": "Sample2",
-            "id": 2
-        }
-    ]
+  "articles": [
+    {
+      "title": "Sample",
+      "synopsis": "Sample",
+      "url": "google.com",
+      "time": "17:31:41 GMT-0500 (Central Daylight Time)",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": "Sample2",
+      "synopsis": "Sample2",
+      "url": "google.com",
+      "time": "17:41:41 GMT-0500 (Central Daylight Time)",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "title": "ddd",
+      "synopsis": "ddd",
+      "url": "ddd",
+      "time": "1",
+      "userId": "1",
+      "id": 3
+    }
+  ],
+  "events": [
+    {
+      "name": "Sample",
+      "date": "2020-07-03",
+      "location": "Sample",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "name": "Sample2",
+      "date": "2020-07-034",
+      "location": "Sample2",
+      "userId": 2,
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "user": "Joe",
+      "email": "joe@joe.com",
+      "password": "test",
+      "id": 1
+    },
+    {
+      "user": "Test",
+      "email": "test@test.com",
+      "password": "test",
+      "id": 2
+    },
+    {
+      "user": "Testing",
+      "email": "testing@testing.com",
+      "password": "test",
+      "id": 3
+    }
+  ],
+  "friends": [
+    {
+      "activeUserId": 2,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "activeUserId": 1,
+      "userId": 3,
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "User 1 Task yeha",
+      "completeStatus": false,
+      "completeDate": "2020-07-03",
+      "userId": 1
+    },
+    {
+      "name": "Another User 1 Task",
+      "completeDate": "2020-07-03",
+      "completeStatus": false,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "User 2 Task",
+      "completeDate": "2020-07-04",
+      "completeStatus": false,
+      "userId": 2,
+      "id": 3
+    }
+  ],
+  "messages": [
+    {
+      "entry": "YUS",
+      "entryDate": "7/20/20, 8:04:21 AM",
+      "id": 1,
+      "userId": "1"
+    },
+    {
+      "entry": "ddddd",
+      "entryDate": "7/20/20, 8:04:31 AM",
+      "id": 2,
+      "userId": "1"
+    },
+    {
+      "entry": "yus sir",
+      "entryDate": "7/20/20, 8:13:03 AM",
+      "id": 3,
+      "userId": "1"
+    },
+    {
+      "entry": "ddddd",
+      "entryDate": "7/20/20, 9:01:59 AM",
+      "id": 6,
+      "userId": "1"
+    }
+  ]
 }
