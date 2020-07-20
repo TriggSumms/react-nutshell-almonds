@@ -15,5 +15,10 @@ export default {
         },
         body: JSON.stringify(newFriend)
     }).then(data => data.json())
+},
+delete(id) {
+  return fetch(`${remoteURL}/friends/${id}`, {
+    method: "DELETE"
+  }).then(result => result.json())
 }
 }

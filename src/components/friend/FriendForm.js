@@ -3,7 +3,7 @@ import FriendManager from '../../modules/FriendManager';
 import './FriendForm.css'
 
 const FriendForm = props => {
-  const [friend, setfriend] = useState({ name: ""});
+  const [friend, setfriend] = useState({ name: "", userId: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
@@ -22,7 +22,7 @@ const FriendForm = props => {
       setIsLoading(true);
       // Create the friend and redirect user to friend list
       FriendManager.post(friend)
-        .then(() => props.history.push("/friends"));
+        .then(() => props.history.push("/home")); //sends the user back to "home" after adding friend
     }
   };
 

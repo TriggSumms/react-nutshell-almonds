@@ -12,7 +12,13 @@ const FriendList = (props) => {
     //  use the setFriends function to update state
     return FriendManager.getAll().then(friendsFromAPI => {
       setFriends(friendsFromAPI)
+
     });
+  };
+
+  const deleteFriend = id => {
+    FriendManager.delete(id)
+      .then(() => FriendManager.getAll().then(setFriends));
   };
 
   // got the friends from the API on the component's first render
@@ -34,7 +40,11 @@ const FriendList = (props) => {
   </section>
     <div className="container-cards">
       {friends.map(friend => 
-      <FriendCard key={friend.id} friend={friend} />)}
+      <FriendCard
+       key={friend.id} 
+       friend={friend}
+       UserId={friend.UserId}
+       deleteFriend={deleteFriend} />)}
     </div>
     </div>
   );
