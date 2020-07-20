@@ -60,7 +60,7 @@ const MessageList = (props) => {
                             )}
                             })}
             </div>
-     )
+     
 
         </>
     )
