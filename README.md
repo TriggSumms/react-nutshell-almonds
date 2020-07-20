@@ -17,7 +17,6 @@ PICTURE GOES HERE
 - Created tasks section
 - Created events section
 - Created README file
-- In charge of site design (not a graphic designer, please be kind)
 - Tasks and events sections only show data belonging to the logged in user
 - Tasks and events sections have full CRUD functionality
 
