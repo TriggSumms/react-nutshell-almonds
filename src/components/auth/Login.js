@@ -18,12 +18,7 @@ const Login = props => {
         ...Let's just trust the user... That's a good idea, right????
 */
 
-   sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-        );
-        
-  
+
    //Input FROM Chris M.
    sessionStorage.setItem("credentials", JSON.stringify(credentials))
    sessionStorage.setItem("activeUser", 1)

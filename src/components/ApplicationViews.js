@@ -87,6 +87,7 @@ const ApplicationViews = (props) => {
 
       {/*************** EVENTS ***************/}
 
+
       <Route
         exact
         path="/events"
