@@ -3,6 +3,9 @@ import React from "react";
 import Home from "./home/Home";
 import Login from "./auth/Login";
 import FriendList from "./friend/FriendList"
+import MessageList from "./message/MessageList"
+import MessageForm from "./message/MessageForm"
+import MessageEditForm from "./message/MessageEditForm"
 
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
@@ -34,6 +37,28 @@ const ApplicationViews = (props) => {
         render={props => {
             return <FriendList {...props} />;
     }}/>
+
+ <Route
+        exact path="/home"
+        render={props => {
+            if (hasUser) {
+              return <MessageList {...props} 
+      />} 
+            else {
+              return <Redirect to="/home" />  
+            }
+    }}/>
+    
+<Route 
+        path="/messages/:messageId(\d+)/edit" 
+        render={props => {
+          if (hasUser) {
+            return <MessageEditForm {...props}
+       />}
+           else {
+            return <Redirect to="/home" />
+          }
+    }}/> 
 
 
 

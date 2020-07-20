@@ -1,54 +1,51 @@
-import React, { useState } from 'react';
-import MessageManager from '../../modules/MessageManager';
-//import MessageList from './MessageList'
+import React, { useState, useEffect } from "react"
+import MessageManager from "../../modules/MessageManager"
+import TaskCard from "../task/TaskCard";
 
 
 
 
-//Method for Creating Time Stamp correctly...
-let timeStamp = new Intl.DateTimeFormat("en", {
-    timeStyle: "medium",
-    dateStyle: "short"
-});
-
-const MessageForm = props => {
-    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: "" });
+const MessageEditForm = props => {
+    const [message, setMessage] = useState({userId: "", entryDate: "", entry: ""});
     const [isLoading, setIsLoading] = useState(false);
 
-    //This will handle the changes  and grab all em messages come an "evt = event"
     const handleFieldChange = evt => {
-        const stateToChange = { ...message }
+        const stateToChange = { ...message };
         stateToChange[evt.target.id] = evt.target.value;
         setMessage(stateToChange);
+    };
+
+    const updateExistingMessage = evt => {
+        evt.preventDefault()
+        setIsLoading(true);
+
+        //Created an easy tag to post to the return edit card.... for showing chats when they are edited     
+        //let timeStamp = new Date();
+        const MessageChanged = "(~Edited~)"
+
+        // This is an edit, so we need the id
+        const editedMessage = {
+            id: props.match.params.messageId,
+            userId: message.userId,
+            entryDate: message.entryDate + MessageChanged,
+            entry: message.entry
+        };
+
+        MessageManager.update(editedMessage)
+            .then(() => props.history.push("/home"))
     }
 
-    //const activeUser = JSON.parse(sessionStorage.getItem("credentials"))
-
-    message.userId = sessionStorage.getItem("activeUser")
-
-
-
-
-    //Pushing the constructed message with our manager to post the message
-    const constructNewMessage = evt => {
-        evt.preventDefault();
-        if (message.entry === "") {
-            window.alert("O me O my, looks like you dont wanna send a message?...Please fill out entry to continue.");
-        } else {
-            // This is in place to control the user(s) clicks and too  make sure were not flooded with new messages
-            setIsLoading(true);
-
-
-
-            MessageManager.post(message)
-                .then(() => MessageManager.getAll())
-                .then(() => props.history.push("/home"))
+    useEffect(() => {
+        MessageManager.get(props.match.params.messageId)
+            .then(message => {
+                setMessage(message);
+                setIsLoading(false);
+            });
+    }, []);
 
 
 
 
-        }
-    };
 
     return (
         <>
@@ -70,7 +67,7 @@ const MessageForm = props => {
                             placeholder="Write your message Here..."
                         ></input>
                         {/* Not sure if date is needed here, might need to change to time stamp? */}
-                        {/*         <label htmlFor="entryDate">Entry Date</label>
+{/*        <label htmlFor="entryDate">Entry Date</label>
             <input
               type="date"
               required
@@ -84,14 +81,13 @@ const MessageForm = props => {
                         <button
                             type="button"
                             disabled={isLoading}
-                            onClick={constructNewMessage}
+                            onClick={updateExistingMessage}
                         >Submit ur Message</button>
                     </div>
                 </fieldset>
             </form>
         </>
-    )
-
+    );
 }
 
-export default MessageForm;
+export default MessageEditForm

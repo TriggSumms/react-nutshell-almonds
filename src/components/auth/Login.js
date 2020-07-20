@@ -24,7 +24,12 @@ const Login = props => {
         );
         };
     */
+   //Input FROM Chris M.
+   sessionStorage.setItem("credentials", JSON.stringify(credentials))
+   sessionStorage.setItem("activeUser", 1)
 
+
+   
    //Goal is to use the push to route the user to the home/USER profile pg after sucessfully logging in
    props.setUser(credentials);
    props.history.push("/home");

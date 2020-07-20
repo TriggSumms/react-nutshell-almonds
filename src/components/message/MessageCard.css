@@ -1,0 +1,27 @@
+.chat___Container{
+    background-color: aqua;
+  opacity: 100%;
+  width: 100%;
+  
+  }
+  
+  .constructedMessage__Container{
+      background-color: rgb(148, 148, 148); 
+  }
+  .constructedMessageCard{
+      background-color: cornsilk;
+      display: inline-flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 20%;
+      border-radius: 5px;
+  
+  }
+  
+  .newMessage__Container{
+      background-color: white;
+  }
+
+
+

@@ -67,12 +67,6 @@
   ],
   "tasks": [
     {
-      "name": "yeyeye",
-      "completeStatus": false,
-      "completeDate": "2020-07-15",
-      "id": 3
-    },
-    {
       "name": "OKIE DOKIE",
       "completeStatus": false,
       "completeDate": "2020-07-08",
@@ -87,14 +81,33 @@
   ],
   "messages": [
     {
-      "userId": 1,
-      "message": "Sample",
-      "id": 1
+      "entry": "TYO BOI",
+      "entryDate": "7/19/20, 7:22:57 PM",
+      "id": 3,
+      "userId": 1
     },
     {
-      "userId": 2,
-      "message": "Sample2",
-      "id": 2
+      "id": 5,
+      "entry": "playa2",
+      "entryDate": "7/19/20, 7:39:25 PM(Message Edited)"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "entryDate": "7/19/20, 7:39:57 PM(~Edited~)",
+      "entry": "alright now"
+    },
+    {
+      "entry": "HEllo World",
+      "entryDate": "7/19/20, 8:18:30 PM",
+      "id": 7,
+      "userId": 1
+    },
+    {
+      "entry": "okay 3",
+      "entryDate": "7/19/20, 9:42:10 PM",
+      "id": 8,
+      "userId": "1"
     }
   ]
 }
