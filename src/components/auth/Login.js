@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 
 const Login = props => {
-  
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
-  
+  const [credentials, setCredentials] = useState({ email: "", password: "", userName: ""});
+
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
@@ -12,15 +11,32 @@ const Login = props => {
   };
   
   const handleLogin = (e) => {
-    e.preventDefault()
-    /*
-    For now, just store the email and password that
-    the customer enters into session storage.
-    ...Let's just trust the user... That's a good idea, right????
-    */
+    e.preventDefault();
+/*
+        For now, just store the email and password that
+        the customer enters into session storage.
+        ...Let's just trust the user... That's a good idea, right????
+*/
+
+   sessionStorage.setItem(
+      "credentials",
+      JSON.stringify(credentials)
+        );
+        
+  
+   //Input FROM Chris M.
    sessionStorage.setItem("credentials", JSON.stringify(credentials))
    sessionStorage.setItem("activeUser", 1)
+   //sessionStorage.setItem("activeUser", 2)
+
+
+   
+   //Goal is to use the push to route the user to the home/USER profile pg after sucessfully logging in
+   props.setUser(credentials);
+   props.history.push("/home");
   }
+
+
 
   /* This is representing our sign in and registration forms. 
   We can adjust the visualization and functionality as needed */
@@ -53,7 +69,7 @@ const Login = props => {
       <div className="formgrid">
         <input onChange={handleFieldChange} type="email"
           id="email"
-          placeholder="Email address"
+          placeholder="email@...com"
           required="" autoFocus="" />
         <label htmlFor="inputEmail">Email address</label>
 
@@ -62,6 +78,12 @@ const Login = props => {
           placeholder="Password"
           required="" />
         <label htmlFor="inputPassword">Password</label>
+
+        <input onChange={handleFieldChange} type="userName"
+          id="userName"
+          placeholder="User Name"
+          required="" />
+        <label htmlFor="registerInputUserName">Create Your User Name</label>
       </div>
       <button type="submit">Create Account</button>
     </fieldset>
