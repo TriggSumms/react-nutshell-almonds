@@ -3,22 +3,27 @@ import "./ArticleCard.css"
 
 
 const ArticleCard = props => {
+
+    if (props.article.userId === sessionStorage.getItem("activeUser")) {
+
   return (
 
         <div className="card">
                     <div className="card-content">
                         <div className="nameDate">
                             
-                            
-                            
-                        </div>    
+                        </div>
+                         
+                           
                         <div className="article__deleteButton">
-                            {/* <button id="deleteArticleBtn__${props.id}" className="deleteBtn" type="button">&times;</button> */}
+                           
                             <button type="button" onClick={() => props.deleteArticle(props.article.id)}>Delete</button>
                         </div>
+                            
+                        
                     </div>
                     <div className="articleTitle">
-                        <h3>{props.title}
+                        <h3>
                         <a href={props.article.url} alt={props.article.title} target="_blank" rel="noopener noreferrer">{props.article.title} </a>
 
                         </h3>
@@ -27,18 +32,32 @@ const ArticleCard = props => {
                         <p>{props.article.synopsis}</p>
                     </div>
                 </div>
-  )
 
-//     <div className="card">
-//       <div className="card-content">
-        
-//         <h3>
-//           Title: <span className="card-articletitle">{props.article.title}</span>
-//         </h3>
-//         <p>{}</p>
-//       </div>
-//     </div>
+  ) 
+  }
+else
+  {
+
+    return (
+  
+          <div className="friendArticleCard">
+                      <div className="articleTitle">
+                          <h3>
+                          <a href={props.article.url} alt={props.article.title} target="_blank" rel="noopener noreferrer">{props.article.title} </a>
+  
+                          </h3>
+                      </div>
+                      <div className="article__description">
+                          <p>{props.article.synopsis}</p>
+                      </div>
+                  </div>
+                  
+  
+    ) 
+    }
+
 //   );
 };
 
 export default ArticleCard;
+
