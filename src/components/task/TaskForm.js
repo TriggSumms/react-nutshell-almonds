@@ -3,7 +3,7 @@ import TaskManager from '../../modules/TaskManager';
 import './TaskForm.css';
 
 const TaskForm = props => {
-    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "" });
+    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: "" });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -25,11 +25,22 @@ const TaskForm = props => {
         }
     };
 
+    task.userId = sessionStorage.getItem("activeUser")
+
     return (
         <>
             <form>
                 <fieldset>
                     <div className="formgrid">
+                        <input
+                            type="hidden"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="userId"
+                            value={task.userId}
+                        />
+
                         <input
                             type="text"
                             required
