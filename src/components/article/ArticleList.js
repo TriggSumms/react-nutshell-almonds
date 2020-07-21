@@ -29,9 +29,15 @@ const ArticleList = (props) => {
   // Mapping through the articles array to create a list of article cards
   return (
     <>
-      
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => { props.history.push("/articles/new") }}>
+          New Article
+  </button>
+      </section>
 
-      <div className="container-cards">
+      <div className="article-container-cards">
         {articles.map(article =>
           <ArticleCard
             key={article.id}
@@ -40,13 +46,7 @@ const ArticleList = (props) => {
             {...props}
           />)}
       </div>
-      <section className="section-content">
-        <button type="button"
-          className="btn"
-          onClick={() => { props.history.push("/articles/new") }}>
-          New Article
-  </button>
-      </section>
+      
     </>
   );
 };

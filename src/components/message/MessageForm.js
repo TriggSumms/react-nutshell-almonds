@@ -52,7 +52,7 @@ const MessageForm = props => {
 
     return (
         <>
-        <div className="message__Container">
+      
             <form >
                 <fieldset className="messageInput__Container">
                     <div className="formgrid">
@@ -83,7 +83,7 @@ const MessageForm = props => {
                     </div>
                 </fieldset>
             </form>
-        </div>
+        
         </>
     )
 

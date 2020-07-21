@@ -8,7 +8,7 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
 
     return (
         
-        <div className="message__Container">
+        
         <div className="constructedMessage-Container">
             <div className="constructedMessageCard">
                 <div className="messageCard-content">
@@ -22,7 +22,7 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
                 <button className="message__buttons" type="button" onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>Edit</button>
             </div>
         </div>
-    </div>
+    
              )
             }
     else {
