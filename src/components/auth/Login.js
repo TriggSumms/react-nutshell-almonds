@@ -24,7 +24,7 @@ const Login = props => {
           if (user.user === credentials.user && user.password === credentials.password) {
             sessionStorage.setItem("credentials", JSON.stringify(credentials))
             sessionStorage.setItem("activeUser", user.id)
-            props.history.push("/articles")
+            props.history.push("/home")
           }
 
         })
