@@ -28,13 +28,7 @@ const TaskList = (props) => {
     // Finally we use map() to "loop over" the tasks array to show a list of task cards
     return (
         <>
-            <section className="section-content">
-                <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/tasks/new") }}>
-                    New Task
-                </button>
-            </section>
+            
 
             <div className="container-cards">
                 {tasks.map(task => {
@@ -50,6 +44,13 @@ const TaskList = (props) => {
                     }
                 })}
             </div>
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/tasks/new") }}>
+                    New Task
+                </button>
+            </section>
         </>
     );
 };
