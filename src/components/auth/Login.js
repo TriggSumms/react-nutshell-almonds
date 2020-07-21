@@ -58,12 +58,13 @@ const Login = props => {
             <label htmlFor="inputPassword">Password</label>
           </div>
           <button type="submit">Sign in</button>
+          <div className="register">New user? &nbsp;
+      <Link to="/register"> Register a new account </Link>
+      </div>
         </fieldset>
       </form>
 
-      <div className="register">New user?
-      <Link to="/register">Register a new account</Link>
-      </div>
+      
     </div>
   );
 };

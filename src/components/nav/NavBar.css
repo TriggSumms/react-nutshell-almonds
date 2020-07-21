@@ -6,7 +6,9 @@ small {
   nav .container {
     display: flex;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 10;
+    color: #f77f00;
+    border: dotted #f77f00;
   }
   
   nav .container li {
@@ -14,14 +16,14 @@ small {
     padding: 10px;
     text-align: center;
     font-size: 1.5em;
-    color: cornsilk;
+    color: #f77f00;
     box-sizing: border-box;
-    background-color: #f77f00; 
+    background-color: #eae2b7;
     list-style-type: none;
   }
   
   .nav-link {
-    color: cornsilk;
+    color: #f77f00;
     text-decoration: underline;
     cursor: pointer;
   }

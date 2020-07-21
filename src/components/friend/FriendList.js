@@ -31,7 +31,7 @@ const FriendList = (props) => {
   return (
     <>
       <section className="friend-section-content">
-        <h1>Your Friends:</h1>
+        <h1 className="friend-header">Your Friends:</h1>
 
       </section>
 
