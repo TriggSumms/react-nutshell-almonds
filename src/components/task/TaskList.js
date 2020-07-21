@@ -38,7 +38,7 @@ const TaskList = (props) => {
 
             <div className="container-cards">
                 {tasks.map(task => {
-                    if (task.userId == sessionStorage.getItem("activeUser")) {
+                    if (task.userId === parseInt(sessionStorage.getItem("activeUser"))) {
                         return (
                             <TaskCard
                                 key={task.id}

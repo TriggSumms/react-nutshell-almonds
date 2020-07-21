@@ -1,7 +1,11 @@
 import React, { useState } from "react"
+import UserManager from "./../../modules/UserManager"
+import { Link } from "react-router-dom";
 
+const userName = ""
+const password = ""
 const Login = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", userName: ""});
+  const [credentials, setCredentials] = useState([]);
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -10,85 +14,60 @@ const Login = props => {
     setCredentials(stateToChange);
   };
   
-  const handleLogin = (e) => {
+  const tryLogin = (e) => {
     e.preventDefault();
-/*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-*/
+    console.log(credentials)
+    
+    UserManager.getAllUsers()
+      .then(users => {
+        users.find(user => {
+          if (user.user === credentials.user && user.password === credentials.password) {
+            sessionStorage.setItem("credentials", JSON.stringify(credentials))
+            sessionStorage.setItem("activeUser", user.id)
+            props.history.push("/home")
+          }
 
-   sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-        );
-        
-  
-   //Input FROM Chris M.
-   sessionStorage.setItem("credentials", JSON.stringify(credentials))
-   sessionStorage.setItem("activeUser", 1)
-   //sessionStorage.setItem("activeUser", 2)
+        })
+      })
 
 
-   
-   //Goal is to use the push to route the user to the home/USER profile pg after sucessfully logging in
-   props.setUser(credentials);
-   props.history.push("/home");
+    // sessionStorage.setItem("credentials", JSON.stringify(credentials))
+    // sessionStorage.setItem("activeUser", 1)
+
   }
+
 
 
 
   /* This is representing our sign in and registration forms. 
   We can adjust the visualization and functionality as needed */
-  
+
   return (
-      <div>
-    <form onSubmit={handleLogin}>
-      <fieldset>
-        <h3>Please sign in</h3>
-        <div className="formgrid">
-          <input onChange={handleFieldChange} type="email"
-            id="email"
-            placeholder="Email address"
-            required="" autoFocus="" />
-          <label htmlFor="inputEmail">Email address</label>
+    <div>
+      <form onSubmit={tryLogin}>
+        <fieldset>
+          <h3>Please sign in</h3>
+          <div className="formgrid">
+            <input onChange={handleFieldChange} type="userName"
+              id="user"
+              placeholder="Username"
+              required="" autoFocus="" />
+            <label htmlFor="userName">Username</label>
 
-          <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
-            required="" />
-          <label htmlFor="inputPassword">Password</label>
-        </div>
-        <button type="submit">Sign in</button>
-      </fieldset>
-    </form>
+            <input onChange={handleFieldChange} type="password"
+              id="password"
+              placeholder="Password"
+              required="" />
+            <label htmlFor="inputPassword">Password</label>
+          </div>
+          <button type="submit">Sign in</button>
+        </fieldset>
+      </form>
 
-    <form onSubmit={handleLogin}>
-    <fieldset>
-      <h3>New User? Register an Account</h3>
-      <div className="formgrid">
-        <input onChange={handleFieldChange} type="email"
-          id="email"
-          placeholder="email@...com"
-          required="" autoFocus="" />
-        <label htmlFor="inputEmail">Email address</label>
-
-        <input onChange={handleFieldChange} type="password"
-          id="password"
-          placeholder="Password"
-          required="" />
-        <label htmlFor="inputPassword">Password</label>
-
-        <input onChange={handleFieldChange} type="userName"
-          id="userName"
-          placeholder="User Name"
-          required="" />
-        <label htmlFor="registerInputUserName">Create Your User Name</label>
+      <div className="register">New user?
+      <Link to="/register">Register a new account</Link>
       </div>
-      <button type="submit">Create Account</button>
-    </fieldset>
-  </form>
-  </div>
+    </div>
   );
 };
 

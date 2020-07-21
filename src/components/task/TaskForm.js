@@ -3,7 +3,7 @@ import TaskManager from '../../modules/TaskManager';
 import './TaskForm.css';
 
 const TaskForm = props => {
-    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: "" });
+    const [task, setTask] = useState({ name: "", completeStatus: false, completeDate: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -16,7 +16,7 @@ const TaskForm = props => {
     const constructNewTask = evt => {
         evt.preventDefault();
         if (task.name === "" || task.completeDate === "") {
-            window.alert("Please input a task name and date");
+            window.alert("Please complete all fields");
         } else {
             setIsLoading(true);
             // Create the task and redirect user to task list
@@ -25,8 +25,9 @@ const TaskForm = props => {
         }
     };
 
-    task.userId = sessionStorage.getItem("activeUser")
-
+    const activeId = sessionStorage.getItem("activeUser")
+    task.userId = parseInt(activeId)
+    
     return (
         <>
             <form>
@@ -59,7 +60,7 @@ const TaskForm = props => {
                             id="completeDate"
                             value={task.completeDate}
                         />
-                        <label htmlFor="phoneNumber">Date</label>
+                        <label htmlFor="completeDate">Date</label>
                     </div>
 
                     <div className="alignRight">

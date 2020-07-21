@@ -1,5 +1,8 @@
 const remoteURL = "http://localhost:5002"
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
 
 export default {

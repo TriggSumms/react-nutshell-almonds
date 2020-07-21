@@ -4,10 +4,6 @@ export default {
     get(id) {
         return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
     },
-    getWithAnimals(id) {
-        return fetch(`${remoteURL}/tasks/${id}`)
-            .then(result => result.json())
-    },
     getAll() {
         return fetch(`${remoteURL}/tasks`).then(result => result.json())
     },
