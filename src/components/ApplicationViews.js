@@ -16,6 +16,7 @@ import TaskEditForm from './task/TaskEditForm';
 import EventList from "./event/EventList";
 import EventForm from './event/EventForm';
 import EventEditForm from './event/EventEditForm';
+import UserList from "./auth/UserList"
 
 
 // Check if credentials are in session storage returns true/false
@@ -40,6 +41,11 @@ const ApplicationViews = (props) => {
       }} />
       <Route path="/register" render={props => {
         return <Register setUser={setUser} {...props} />
+      }} />
+      <Route 
+      path="/home"
+      render={props => {
+        return <UserList {...props} />
       }} />
       <Route
         path="/home"

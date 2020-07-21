@@ -6,14 +6,14 @@ const FriendCard = (props) => {
     <div className="card">
       <div className="card-content">
         <picture>
-          <img src="http://quotesnhumor.com/wp-content/uploads/2018/03/Best-Friend-Quotes-True-Friendship-Starts-here.jpg" alt="My Dog" />
+          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="My Dog" />
         </picture>
         <h3>
-          Name: <span className="card-petname">
+          <span className="card-petname">
               {props.friend.name}
           </span>
         </h3>
-        <button type="button" onClick={() => props.deleteFriend(props.friend.id)}>Delete Friend</button>
+        <button class="delete-friend" type="button" onClick={() => props.deleteFriend(props.friend.id)}>Delete Friend</button>
       </div>
     </div>
   );
