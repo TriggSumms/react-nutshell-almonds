@@ -1,13 +1,21 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import ArticleList from "./article/ArticleList"
+import ArticleForm from "./article/ArticleForm"
 import Login from "./auth/Login";
+import Register from "./auth/Register"
 import FriendList from "./friend/FriendList"
+import MessageList from "./message/MessageList"
+import MessageForm from "./message/MessageForm"
+import MessageEditForm from "./message/MessageEditForm"
 import FriendForm from "./friend/FriendForm"
-
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
+import EventList from "./event/EventList";
+import EventForm from './event/EventForm';
+import EventEditForm from './event/EventEditForm';
 
 
 // Check if credentials are in session storage returns true/false
@@ -19,69 +27,131 @@ const ApplicationViews = (props) => {
   const setUser = props.setUser;
   return (
     <React.Fragment>
-        <Route
-         exact
-         path="/home"
+      <Route
+        exact
+        path="/home"
         render={(props) => {
-            return <Home />;
-    }}/>
-        {/* LOGIN ROUTE */}
-        {/* //pass the `setUser` function to Login component. */}
-        <Route path="/login" render={props => {
-                return <Login setUser={setUser} {...props} />
-    }}/>
+          return <Home {...props} />;
+        }} />
+      {/* LOGIN ROUTE */}
+      {/* //pass the `setUser` function to Login component. */}
+      <Route path="/login" render={props => {
+        return <Login setUser={setUser} {...props} />
+      }} />
+      <Route path="/register" render={props => {
+        return <Register setUser={setUser} {...props} />
+      }} />
       <Route
         path="/home"
         render={props => {
-            return <FriendList {...props} />;
-    }}/>
-    <Route path="/friends/new" render={(props) => {
-        return <FriendForm {...props} />
-    }}/>
-    <Route
-        exact
-        path="/articles"
-        render={props => {
-           return <Home />;//Home here is a placeholder value. 
-        //You would need to inserts and import articles once built
-    }}/>
-{/*************** EVENTS ***************/}
+          return <FriendList {...props} />;
+        }} />
+           <Route
+            path="/friends/new"
+            render={(props) => {
+                return <FriendForm {...props} />
+            }} />
 
       <Route
+        exact path="/home"
+        render={props => {
+          if (hasUser) {
+            return <MessageList {...props}
+            />
+          }
+          else {
+            return <Redirect to="/home" />
+          }
+        }} />
+
+      <Route
+        path="/messages/:messageId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <MessageEditForm {...props}
+            />
+          }
+          else {
+            return <Redirect to="/home" />
+          }
+        }} />
+
+
+
+
+      {/*************** ARTICLES ***************/}
+      <Route
+            exact
+            path="/articles"
+            render={props => {
+                if (hasUser) {
+                    return <ArticleList {...props}/>;//Home here is a placeholder value. 
+                    //You would need to inserts and import articles once built
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }} />
+        <Route
+            path="/articles/new"
+            render={(props) => {
+                return <ArticleForm {...props} />
+            }} />
+
+      {/*************** EVENTS ***************/}
+
+        <Route
         exact
         path="/events"
         render={props => {
-            return <Home />;//Home here is a placeholder value. 
-          //You would need to inserts and import events once built
-    }}/>
-      
-{/*************** Tasks ***************NOTE FROM TRIGG:I ONLY PASSed THE "hasUSer" in place of "isAuthenticated"*******/}
-      <Route 
-        exact 
-        path="/tasks" 
-        render={props => {
-            return <TaskList {...props} />
-    }}/>
-
-      <Route 
-        path="/tasks/new" 
+          return <EventList {...props} />
+        }} />
+        
+        <Route
+        path="/events/new"
         render={(props) => {
-        return <TaskForm {...props} />
-    }}/>
+          return <EventForm {...props} />
+        }} />
+        
+        <Route
+        path="/events/:eventId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <EventEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }} />
 
-      <Route 
-        path="/tasks/:taskId(\d+)/edit" 
+      {/*************** TASKS ******************/}
+      <Route
+        exact
+        path="/tasks"
+        render={props => {
+          return <TaskList {...props} />
+        }} />
+
+      <Route
+        path="/tasks/new"
+        render={(props) => {
+          return <TaskForm {...props} />
+        }} />
+
+      <Route
+        path="/tasks/:taskId(\d+)/edit"
         render={props => {
           if (hasUser) {
             return <TaskEditForm {...props} />
           } else {
             return <Redirect to="/login" />
           }
-    }}/>
+        }} />
 
 
-    </React.Fragment>
-  );
-};
 
+
+        </React.Fragment>
+    );
+}
 export default ApplicationViews;
+
+

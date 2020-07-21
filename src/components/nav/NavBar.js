@@ -39,7 +39,7 @@ const NavBar = props => {
           </li>
     : null}
 
-            {/*  */}
+            {/*LOGIN LOGOUT METHODS  */}
   {props.hasUser? 
           <li>
           <span className="nav-link" onClick={handleLogout}> Logout </span>

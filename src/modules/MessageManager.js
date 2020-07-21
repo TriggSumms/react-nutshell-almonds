@@ -1,33 +1,35 @@
+//Messages dabbled with by Trigg Summs
+
 const remoteURL = "http://localhost:5002"
 
 export default {
     get(id) {
-        return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
+        return fetch(`${remoteURL}/messages/${id}`).then(result => result.json())
     },
     getAll() {
-        return fetch(`${remoteURL}/tasks`).then(result => result.json())
+        return fetch(`${remoteURL}/messages`).then(result => result.json())
     },
     delete(id) {
-        return fetch(`${remoteURL}/tasks/${id}`, {
+        return fetch(`${remoteURL}/messages/${id}`, {
             method: "DELETE"
         }).then(result => result.json())
     },
-    post(newTask) {
-        return fetch(`${remoteURL}/tasks`, {
+    post(newMessage) {
+        return fetch(`${remoteURL}/messages`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newTask)
+            body: JSON.stringify(newMessage)
         }).then(data => data.json())
     },
-    update(editedTask) {
-        return fetch(`${remoteURL}/tasks/${editedTask.id}`, {
+    update(editedMessage) {
+        return fetch(`${remoteURL}/messages/${editedMessage.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(editedTask)
+            body: JSON.stringify(editedMessage)
         }).then(data => data.json());
     }
 }

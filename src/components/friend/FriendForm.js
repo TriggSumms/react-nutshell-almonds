@@ -3,7 +3,7 @@ import FriendManager from '../../modules/FriendManager';
 import './FriendForm.css'
 
 const FriendForm = props => {
-  const [friend, setfriend] = useState({ name: "", userId: ""});
+  const [friend, setfriend] = useState({ name: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
