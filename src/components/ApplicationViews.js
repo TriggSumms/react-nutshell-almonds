@@ -4,6 +4,7 @@ import Home from "./home/Home";
 import ArticleList from "./article/ArticleList"
 import ArticleForm from "./article/ArticleForm"
 import Login from "./auth/Login";
+import Register from "./auth/Register"
 import FriendList from "./friend/FriendList"
 import MessageList from "./message/MessageList"
 import MessageForm from "./message/MessageForm"
@@ -30,12 +31,15 @@ const ApplicationViews = (props) => {
         exact
         path="/home"
         render={(props) => {
-          return <Home />;
+          return <Home {...props} />;
         }} />
       {/* LOGIN ROUTE */}
       {/* //pass the `setUser` function to Login component. */}
       <Route path="/login" render={props => {
         return <Login setUser={setUser} {...props} />
+      }} />
+      <Route path="/register" render={props => {
+        return <Register setUser={setUser} {...props} />
       }} />
       <Route
         path="/home"
