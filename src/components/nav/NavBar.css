@@ -6,8 +6,9 @@ small {
   nav .container {
     display: flex;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 10;
     color: #f77f00;
+    border: dotted #f77f00;
   }
   
   nav .container li {

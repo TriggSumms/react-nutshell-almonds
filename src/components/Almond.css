@@ -69,3 +69,18 @@ body {
   color: #f77f00;
 }
 
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+.friend-header {
+    padding: 10;
+    margin-bottom: 10;
+    color: #f77f00;
+    border: dotted #f77f00;
+    background-color: #eae2b7;
+    box-sizing: content-box;
+    width: 20%;
+    text-align: center;
+}
