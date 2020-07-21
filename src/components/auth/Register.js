@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
 
 const Register = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", userName: "" });
+  const [credentials, setCredentials] = useState({ email: "", password: "", user: "" });
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -21,21 +21,23 @@ const Register = props => {
 //   }
 
 
+//sessionStorage.setItem("activeUser", credentials.id)
 
-  const handleRegister = evt => {
-    evt.preventDefault();
-    if (credentials.title === "" || credentials.url === "" || credentials.synopsis === "") {
-      window.alert("Please input a username, password, and email");
-    } else {
-        
-        
-        // Create the credentials and redirect user to credentials list
-        UserManager.createUser(credentials)
-        .then(() => {
-            sessionStorage.setItem("credentials", JSON.stringify(credentials))
-            props.history.push("/home")
-            sessionStorage.setItem("activeUser", 1)}
-            );
+
+const handleRegister = evt => {
+  evt.preventDefault();
+  if (credentials.title === "" || credentials.url === "" || credentials.synopsis === "") {
+    window.alert("Please input a username, password, and email");
+  } else {
+    
+    
+    // Create the credentials and redirect user to credentials list
+    UserManager.createUser(credentials)
+    .then(() => {
+      sessionStorage.setItem("credentials", JSON.stringify(credentials))
+      props.history.push("/login")
+}
+          );
     }
 };
 
@@ -72,7 +74,7 @@ const Register = props => {
             <label htmlFor="inputPassword">Password</label>
 
             <input onChange={handleFieldChange} type="userName"
-              id="userName"
+              id="user"
               placeholder="User Name"
               required="" />
             <label htmlFor="inputUserName">Create Your User Name</label>

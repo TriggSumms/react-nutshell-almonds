@@ -2,8 +2,10 @@ import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
 import { Link } from "react-router-dom";
 
+const userName = ""
+const password = ""
 const Login = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", userName: "" });
+  const [credentials, setCredentials] = useState([]);
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -11,15 +13,29 @@ const Login = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-
-  const handleLogin = (e) => {
+  
+  const tryLogin = (e) => {
     e.preventDefault();
-    //Input FROM Chris M.
-    sessionStorage.setItem("credentials", JSON.stringify(credentials))
-    sessionStorage.setItem("activeUser", 1)
+    console.log(credentials)
+    
+    UserManager.getAllUsers()
+      .then(users => {
+        users.find(user => {
+          if (user.user === credentials.user && user.password === credentials.password) {
+            sessionStorage.setItem("credentials", JSON.stringify(credentials))
+            sessionStorage.setItem("activeUser", user.id)
+            props.history.push("/articles")
+          }
+
+        })
+      })
+
+
+    // sessionStorage.setItem("credentials", JSON.stringify(credentials))
+    // sessionStorage.setItem("activeUser", 1)
 
   }
-   
+
 
 
 
@@ -28,12 +44,12 @@ const Login = props => {
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={tryLogin}>
         <fieldset>
           <h3>Please sign in</h3>
           <div className="formgrid">
             <input onChange={handleFieldChange} type="userName"
-              id="userName"
+              id="user"
               placeholder="Username"
               required="" autoFocus="" />
             <label htmlFor="userName">Username</label>
@@ -47,10 +63,10 @@ const Login = props => {
           <button type="submit">Sign in</button>
         </fieldset>
       </form>
-      
-      <div className="register">New user? 
+
+      <div className="register">New user?
       <Link to="/register">Register a new account</Link>
-      </div> 
+      </div>
     </div>
   );
 };
