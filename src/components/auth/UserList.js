@@ -31,11 +31,6 @@ const UserList = (props) => {
       id={user.id}
       {...props} 
        />)
-       {/* <button type="button"
-      className="btn"
-      onClick>
-      Edit Profile
-  </button> */}
     </div>
     </div>
   );

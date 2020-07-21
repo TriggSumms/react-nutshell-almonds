@@ -16,6 +16,7 @@ import EventList from "./event/EventList";
 import EventForm from './event/EventForm';
 import EventEditForm from './event/EventEditForm';
 import UserList from "./auth/UserList"
+import UserEditForm from "./auth/UserEditForm"
 
 
 // Check if credentials are in session storage returns true/false
@@ -46,6 +47,15 @@ const ApplicationViews = (props) => {
       render={props => {
         return <UserList {...props} />
       }} />
+       <Route
+        path="/users/:userId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <UserEditForm {...props} />
+          } else {
+            return <Redirect to="/home" />
+          }
+        }} />
       <Route
         path="/home"
         render={props => {
