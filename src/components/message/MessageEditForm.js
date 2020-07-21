@@ -48,7 +48,7 @@ const MessageEditForm = props => {
 
     return (
         <>
-        <div className="meesage__Container">
+        <div className="message__Container">
             <form >
                 <fieldset className="messageInput__Container">
                     <div className="formgrid">

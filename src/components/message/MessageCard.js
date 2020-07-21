@@ -8,6 +8,7 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
 
     return (
         
+        
         <div className="message__Container">
         <div className="constructedMessage-Container">
             <div className="constructedMessageCard">
@@ -26,6 +27,7 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
             </div>
         </div>
     </div>
+    
              )
             }
     else {

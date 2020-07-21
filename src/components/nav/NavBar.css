@@ -33,7 +33,7 @@ nav .container li {
     padding: 0;
     margin-bottom: 10;
     color: #f77f00;
-    border: dotted #f77f00;
+    border: dotted  rgb(43, 112, 241);
   }
   
   nav .container li {
@@ -43,12 +43,12 @@ nav .container li {
     font-size: 1.5em;
     color: #f77f00;
     box-sizing: border-box;
-    background-color: #eae2b7;
+    background-color: aliceblue;
     list-style-type: none;
   }
   
   .nav-link {
-    color: #f77f00;
+    color: rgb(43, 112, 241);
     text-decoration: underline;
     cursor: pointer;
   }

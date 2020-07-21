@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import UserManager from "./../../modules/UserManager"
 
 const Register = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", user: "" });
+  const [credentials, setCredentials] = useState({ email: "", password: "", user: "", img: "https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" });
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {

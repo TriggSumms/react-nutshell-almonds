@@ -70,7 +70,7 @@ img {
 
 body {
   background-color: #003049;
-  color: #f77f00;
+  color: rgb(43, 112, 241);
 }
 
 .register {
@@ -81,10 +81,19 @@ body {
 .friend-header {
     padding: 10;
     margin-bottom: 10;
-    color: #f77f00;
-    border: dotted #f77f00;
-    background-color: #eae2b7;
+    color: rgb(43, 112, 241);
+    border: dotted  rgb(43, 112, 241);
+    background-color: aliceblue;
     box-sizing: content-box;
     width: 20%;
     text-align: center;
+}
+
+.article-container-cards {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.chat__Container {
+  background-color: aliceblue;
 }

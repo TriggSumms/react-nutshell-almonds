@@ -17,7 +17,7 @@ const MessageForm = props => {
     const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: 0 });
     const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const clearInputs = () => {message.entry = ""}
+    //const clearInputs = () => {message.entry = ""}
 
 
 
@@ -26,7 +26,7 @@ const MessageForm = props => {
         const stateToChange = { ...message, ...user}
         stateToChange[evt.target.id] = evt.target.value;
         setMessage(stateToChange);
-        clearInputs()
+        //clearInputs()
        
     }
 
@@ -49,7 +49,7 @@ const MessageForm = props => {
 
           MessageManager.post(message)
                 .then(() => MessageManager.getAll())
-                clearInputs()
+                //clearInputs()
                 } 
         
     };

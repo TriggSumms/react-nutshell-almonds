@@ -29,7 +29,13 @@ const TaskList = (props) => {
     return (
         <>
             
-
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/tasks/new") }}>
+                    New Task
+                </button>
+            </section>
             <div className="container-cards">
                 {tasks.map(task => {
                     if (task.userId === parseInt(sessionStorage.getItem("activeUser"))) {
@@ -44,13 +50,7 @@ const TaskList = (props) => {
                     }
                 })}
             </div>
-            <section className="section-content">
-                <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/tasks/new") }}>
-                    New Task
-                </button>
-            </section>
+            
         </>
     );
 };
