@@ -4,6 +4,7 @@ import ApplicationViews from "./ApplicationViews"
 //import FriendCard from "./friend/FriendCard"
 import './Almond.css';
 
+
 const Almond = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 

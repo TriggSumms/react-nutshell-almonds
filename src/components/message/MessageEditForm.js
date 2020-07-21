@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import MessageManager from "../../modules/MessageManager"
-import TaskCard from "../task/TaskCard";
+//import MessageCard from "../message/MessageCard";
+import "./MessageCard.css"
 
 
 
@@ -48,8 +49,9 @@ const MessageEditForm = props => {
 
     return (
         <>
-            <form>
-                <fieldset>
+        <div className="chat__Container">
+            <form >
+                <fieldset className="messageInput__Container">
                     <div className="formgrid">
                         <label htmlFor="entry">Start your Chat!</label>
                         <input
@@ -65,19 +67,10 @@ const MessageEditForm = props => {
                             id="entry"
                             placeholder="Write your message Here..."
                         ></input>
-                        {/* Not sure if date is needed here, might need to change to time stamp? */}
-{/*        <label htmlFor="entryDate">Entry Date</label>
-            <input
-              type="date"
-              required
-              onChange={handleFieldChange}
-              id="entryDate"
-              placeholder="Date"
-            ></input> 
-*/}
                     </div>
                     <div className="alignRight">
                         <button
+                        className="messageSubmit__button"
                             type="button"
                             disabled={isLoading}
                             onClick={updateExistingMessage}
@@ -85,6 +78,7 @@ const MessageEditForm = props => {
                     </div>
                 </fieldset>
             </form>
+        </div>
         </>
     );
 }

@@ -31,5 +31,11 @@ export default {
             },
             body: JSON.stringify(editedMessage)
         }).then(data => data.json());
+    },
+    FriendWithMessage(id, userId) {
+            return fetch(`${remoteURL}/messages/${id}?userId===${userId}`, {
+                
+            }).then(result => result.json());
+        
     }
 }

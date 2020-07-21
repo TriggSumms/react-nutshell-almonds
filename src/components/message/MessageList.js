@@ -19,7 +19,7 @@ const MessageList = (props) => {
             messagesFromAPI.sort((x, y) => {
                 let a = new Date(x.entryDate),
                     b = new Date(y.entryDate);
-                return b - a;
+                return a - b;
             });
             setMessages(messagesFromAPI)
         });
@@ -40,27 +40,21 @@ const MessageList = (props) => {
                 MessageManager.getAll().then(setMessages).then(getMessages));
     };
 
-
-
-
-
     return (
         <>
-            <div><MessageForm {...props} /></div>
+            
             <div className="container-cards">
-                {messages.map(message => {
-                    if (message.userId == sessionStorage.getItem("activeUser")) {
-                        return (
+                {messages.map(message => 
                             <MessageCard
                                 key={message.id}
                                 message={message}
                                 deleteMessage={deleteMessage}
                                 {...props}
                             />
+                            
                             )}
-                            })}
             </div>
-     
+     <div><MessageForm {...props} /></div>
 
         </>
     )
