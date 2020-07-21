@@ -16,7 +16,7 @@
  }
  
  .constructedMessage__Container{
-     background-color: rgb(148, 148, 148); 
+     
      display: flex;
      flex-direction: column;
      padding-bottom: 10px;
@@ -33,19 +33,15 @@
      width: 60%;
      margin: 75px;
      box-shadow: 0 15px 8px 0 rgba(0,0,0,0.2);
-    
-     
-     
      color: white;
      background: #0B93F6;
      border-radius: 15px;
-    
      font-family: "Helvetica Neue";
-     font-size: 15px;
+     font-size: 10px;
      font-weight: normal;
      word-wrap: break-word;
-     margin-bottom: 5px;
-     line-height: 2px;
+     margin-bottom: 1px;
+     line-height: 1px;
      justify-content: center;
      align-content: center;
      

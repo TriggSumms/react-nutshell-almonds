@@ -93,8 +93,8 @@
       "userId": 3,
       "id": 2
     }
-  ], 
-  "Tasks":[
+  ],
+  "tasks": [
     {
       "name": "Another User 1 Task",
       "completeDate": "2020-07-03",
@@ -115,6 +115,13 @@
       "completeDate": "2020-07-16",
       "userId": 1,
       "id": 4
+    },
+    {
+      "name": "Testing",
+      "completeStatus": false,
+      "completeDate": "2020-07-18",
+      "userId": 1,
+      "id": 5
     }
   ],
   "messages": [

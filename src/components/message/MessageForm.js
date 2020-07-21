@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MessageManager from '../../modules/MessageManager';
-import MessageCard from '../message/MessageCard';
+import UserList from '../auth/UserList';
 //import MessageList from './MessageList'
 
 
@@ -13,22 +13,22 @@ let timeStamp = new Intl.DateTimeFormat("en", {
 
 const MessageForm = props => {
     const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: 0 });
+    const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     //This will handle the changes  and grab all em messages come an "evt = event"
     const handleFieldChange = evt => {
-        const stateToChange = { ...message }
+        const stateToChange = { ...message, ...user}
         stateToChange[evt.target.id] = evt.target.value;
         setMessage(stateToChange);
     }
-
-    //const activeUser = JSON.parse(sessionStorage.getItem("credentials"))
 
     //message.userId = sessionStorage.getItem("activeUser")
 
 
     const currentUserId = sessionStorage.getItem("activeUser")
     message.userId = parseInt(currentUserId)
+    
 
 
 
@@ -42,24 +42,25 @@ const MessageForm = props => {
             setIsLoading(true);
  
 
-
+/* 
             MessageManager.post(message)
-                .then(() => props.getMessages()
-                .then(()=> setIsLoading(false))
-           
-    /*             MessageManager.post(message)
+                .then(() => {props.getMessages()
+               setIsLoading(false)})
+            */
+          MessageManager.post(message)
                 .then(() => MessageManager.getAll())
-                .then(() => props.history.push("/home"))
- */
+                
+                //.then(() => props.history.push("/home"))
+ 
 
-                )} 
+                } 
         
     };
 
 
     return (
         <>
-        <div className="message__Container">
+        
             <form >
                 <fieldset className="messageInput__Container">
                     <div className="formgrid">
@@ -90,7 +91,7 @@ const MessageForm = props => {
                     </div>
                 </fieldset>
             </form>
-        </div>
+        
         </>
     )
 

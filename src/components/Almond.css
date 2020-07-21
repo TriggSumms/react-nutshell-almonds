@@ -8,7 +8,6 @@
 /*Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
@@ -60,7 +59,6 @@ img {
   justify-content: space-between;
 }
 
-
 .friend-section-content {
   padding: 1.4em;
 }
@@ -70,37 +68,11 @@ img {
   flex-wrap: wrap;
 }
 
-
-/* 
-.Messaging__Containers{
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  text-align: center;
-  background-color: white;
-  border: 1px solid red;
-  line-height: 200px;
+body {
+  background-color: #eae2b7;
+  color: #003049;
 }
 
-.message__ContainerFake1{
-display:flex;
-  flex:1;
+.delete-friend {
+  background-color: #003049;;
 }
-.message-Container{
-  display:flex;
-  flex:2;
-}
-
-
-
-.message__ContainerFake2{
-  display:flex;
-  flex:3;
-} */
-
-
-
-
-
-
-
