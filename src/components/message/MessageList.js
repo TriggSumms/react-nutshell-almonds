@@ -22,7 +22,7 @@ const MessageList = (props) => {
                 return a - b;
             });
             setMessages(messagesFromAPI)
-        });
+        }).then(getMessages)
     };
 
 
@@ -49,12 +49,14 @@ const MessageList = (props) => {
                                 key={message.id}
                                 message={message}
                                 deleteMessage={deleteMessage}
+                                getMesssages={getMessages} 
                                 {...props}
                             />
                             
                             )}
             </div>
-     <div><MessageForm {...props} /></div>
+
+     <div><MessageForm {...props} getMesssages={getMessages} /></div>
 
         </>
     )

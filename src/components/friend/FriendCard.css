@@ -41,7 +41,39 @@
     margin: .1em;
     width: 100%;
   }
-  
+
+  .addFriend__button{
+    background-color: cornflowerblue;
+    border: none;
+    color: cornsilk;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    
+    display: inline-flex;
+    font-size: 15px;
+    margin: .1em;
+    max-width: 200%;
+    height: 25%;
+    border-radius: 200px; 
+
+  }
+
+
   .card button:hover {
     background-color: darkblue;
+  }
+
+  .delete-friend{
+    background-color: cornflowerblue;
+    border: none;
+    color: cornsilk;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    
+    display: inline-flex;
+    font-size: 15px;
+    margin: .1em;
+    max-width: 200%;
+    height: 25%;
+    border-radius: 200px; 
   }

@@ -1,6 +1,10 @@
 /* Import the google web fonts you want to use */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
+/* @import "./message/MessageCard.css" */
+
+
+  
 /*Typography
 --------------------------------------------------------------*/
 body,

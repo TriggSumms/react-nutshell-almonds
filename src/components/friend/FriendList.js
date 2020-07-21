@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import FriendCard from './FriendCard';
 import FriendManager from '../../modules/FriendManager';
 
+
+
 const FriendList = (props) => {
   // The initial state is an empty array
   const [friends, setFriends] = useState([]);
