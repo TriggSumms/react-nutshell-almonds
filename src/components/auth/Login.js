@@ -16,7 +16,6 @@ const Login = props => {
   
   const tryLogin = (e) => {
     e.preventDefault();
-    console.log(credentials)
     
     UserManager.getAllUsers()
       .then(users => {
@@ -24,15 +23,13 @@ const Login = props => {
           if (user.user === credentials.user && user.password === credentials.password) {
             sessionStorage.setItem("credentials", JSON.stringify(credentials))
             sessionStorage.setItem("activeUser", user.id)
+            props.setUser(credentials)
             props.history.push("/home")
           }
 
         })
       })
 
-
-    // sessionStorage.setItem("credentials", JSON.stringify(credentials))
-    // sessionStorage.setItem("activeUser", 1)
 
   }
 
