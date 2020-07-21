@@ -11,17 +11,6 @@ const Register = props => {
     setCredentials(stateToChange);
   };
 
-//   const handleRegister = (e) => {
-//     e.preventDefault();
-
-
-//     // Create the credentials and redirect user to credentials list
-//     UserManager.createUser(credentials)
-
-//   }
-
-
-//sessionStorage.setItem("activeUser", credentials.id)
 
 
 const handleRegister = evt => {
@@ -41,17 +30,7 @@ const handleRegister = evt => {
     }
 };
 
-//Input FROM Chris M.
 
-
-
-
-
-
-  
-      //Goal is to use the push to route the user to the home/USER profile pg after sucessfully logging in
-    //   props.setUser(credentials);
-    //   props.history.push("/home");
   /* This is representing our sign in and registration forms. 
   We can adjust the visualization and functionality as needed */
 

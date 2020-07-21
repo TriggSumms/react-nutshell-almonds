@@ -16,10 +16,10 @@ const Home = props => {
 
 
       <div>
-        {/* <h2>Chat/Messaging Windows </h2> */}
+        
         <div className="chat___Container"></div>
         <section className="constructedMessage__Container"></section>
-      {/* <button onClick={refreshPageAfterMessage}>Reload &#x27f3;</button> */}
+      
       </div>
     </>
   )

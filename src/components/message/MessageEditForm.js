@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import MessageManager from "../../modules/MessageManager"
-//import MessageCard from "../message/MessageCard";
 import "./MessageCard.css"
 
 

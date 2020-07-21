@@ -23,11 +23,7 @@ const MessageForm = props => {
         setMessage(stateToChange);
     }
 
-    //const activeUser = JSON.parse(sessionStorage.getItem("credentials"))
-
-    //message.userId = sessionStorage.getItem("activeUser")
-
-
+    
     const currentUserId = sessionStorage.getItem("activeUser")
     MessageCard.userId = parseInt(currentUserId)
 
