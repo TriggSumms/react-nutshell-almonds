@@ -16,5 +16,18 @@ export default {
             },
             body: JSON.stringify(editedUser)
         }).then(data => data.json());
-    }
+    },
+    createUser: (newUser) => {
+
+		console.log(newUser);
+		return fetch(`${remoteURL}/users`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(newUser)
+        })
+        // .then(response => response.json())
+
+	}
 };
