@@ -29,7 +29,13 @@ const EventList = (props) => {
     return (
         <>
             
-
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/events/new") }}>
+                    New Event
+                </button>
+            </section>
             <div className="container-cards">
                 {events.map(event => {
                     if (event.userId === parseInt(sessionStorage.getItem("activeUser"))) {
@@ -44,13 +50,7 @@ const EventList = (props) => {
                     }
                 })}
             </div>
-            <section className="section-content">
-                <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/events/new") }}>
-                    New Event
-                </button>
-            </section>
+            
         </>
     );
 };

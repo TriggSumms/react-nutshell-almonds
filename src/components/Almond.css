@@ -1,6 +1,10 @@
 /* Import the google web fonts you want to use */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
+/* @import "./message/MessageCard.css" */
+
+
+  
 /*Typography
 --------------------------------------------------------------*/
 body,
@@ -65,10 +69,31 @@ img {
 }
 
 body {
-  background-color: #eae2b7;
-  color: #003049;
+  background-color: #003049;
+  color: rgb(43, 112, 241);
 }
 
-.delete-friend {
-  background-color: #003049;;
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+.friend-header {
+    padding: 10;
+    margin-bottom: 10;
+    color: rgb(43, 112, 241);
+    border: dotted  rgb(43, 112, 241);
+    background-color: aliceblue;
+    box-sizing: content-box;
+    width: 20%;
+    text-align: center;
+}
+
+.article-container-cards {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.chat__Container {
+  background-color: aliceblue;
 }

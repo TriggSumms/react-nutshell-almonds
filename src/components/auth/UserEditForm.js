@@ -47,7 +47,7 @@ const UserEditForm = props => {
                             className="form-control"
                             onChange={handleFieldChange}
                             id="name"
-                            value={user.name}
+                            value={user.user}
                         />
                         <label htmlFor="name">Username</label>
 

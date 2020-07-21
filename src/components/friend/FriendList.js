@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import FriendCard from './FriendCard';
 import FriendManager from '../../modules/FriendManager';
 
+
+
 const FriendList = (props) => {
   // The initial state is an empty array
   const [friends, setFriends] = useState([]);
@@ -31,10 +33,16 @@ const FriendList = (props) => {
   return (
     <>
       <section className="friend-section-content">
-        <h1>Your Friends:</h1>
+        <h1 className="friend-header">Your Friends:</h1>
 
       </section>
-
+      <div>
+        <button type="button"
+          className="btn"
+          onClick={() => { props.history.push("/friends/new") }}>
+          Add a Friend
+            </button>
+      </div>
       <div className="friend-container-cards">
         {/* edit this for card appearance */}
         {friends.map(friend => {
@@ -52,13 +60,7 @@ const FriendList = (props) => {
         })}
 
       </div>
-      <div>
-        <button type="button"
-          className="btn"
-          onClick={() => { props.history.push("/friends/new") }}>
-          Add a Friend
-            </button>
-      </div>
+     
     </>
   );
 };

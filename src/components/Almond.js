@@ -3,6 +3,7 @@ import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 import './Almond.css';
 
+
 const Almond = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 

@@ -16,6 +16,7 @@ import EventList from "./event/EventList";
 import EventForm from './event/EventForm';
 import EventEditForm from './event/EventEditForm';
 import UserList from "./auth/UserList"
+import UserEditForm from "./auth/UserEditForm"
 
 
 // Check if credentials are in session storage returns true/false
@@ -46,6 +47,15 @@ const ApplicationViews = (props) => {
       render={props => {
         return <UserList {...props} />
       }} />
+       <Route
+        path="/users/:userId(\d+)/edit"
+        render={props => {
+          if (hasUser) {
+            return <UserEditForm {...props} />
+          } else {
+            return <Redirect to="/home" />
+          }
+        }} />
       <Route
         path="/home"
         render={props => {
@@ -103,21 +113,20 @@ const ApplicationViews = (props) => {
             }} />
 
       {/*************** EVENTS ***************/}
-
-        <Route
+      <Route
         exact
         path="/events"
         render={props => {
           return <EventList {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/new"
         render={(props) => {
           return <EventForm {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/:eventId(\d+)/edit"
         render={props => {
           if (hasUser) {
@@ -150,9 +159,6 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
-
-
-
 
         </React.Fragment>
     );
