@@ -78,7 +78,7 @@ body {
     padding: 10;
     margin-bottom: 10;
     color: rgb(43, 112, 241);
-    border: dotted #f77f00;
+    border: dotted  rgb(43, 112, 241);
     background-color: aliceblue;
     box-sizing: content-box;
     width: 20%;

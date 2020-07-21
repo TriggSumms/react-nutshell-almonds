@@ -13,7 +13,7 @@ const UserCard = props => {
         <h3>
           <span className="card-petname">
           </span>
-          <button type="button" onClick={() => props.history.push(`/users/${props.user.id}/edit`)}>Edit Profile</button>
+      
         </h3>
       </div>
     </div>
