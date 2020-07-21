@@ -49,7 +49,7 @@ const MessageEditForm = props => {
 
     return (
         <>
-        <div className="chat__Container">
+        <div className="meesage__Container">
             <form >
                 <fieldset className="messageInput__Container">
                     <div className="formgrid">
@@ -76,9 +76,10 @@ const MessageEditForm = props => {
                             onClick={updateExistingMessage}
                         >Submit ur Message</button>
                     </div>
+                   
                 </fieldset>
             </form>
-        </div>
+         </div>
         </>
     );
 }

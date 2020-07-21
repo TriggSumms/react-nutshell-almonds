@@ -1,3 +1,46 @@
+# Team Almond's Group Project: Nutshell 2
+
+Team Almond was tasked with creating a social media app with CRUD functionality utilizing React.js using the criteria listed below.
+
+Concepts covered in this project include: session storage, creating a JSON database, CRUD functionality with API fetch calls to JSON server, associating that data with a userID, JavaScript, HTML, CSS, React.js.
+
+PICTURE GOES HERE
+
+## Erik Lindstrom
+- Created articles section
+- Fetched article data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+- Added functionality to only allow articles belonging to logged in user to be deleted
+
+## Christopher McColgan
+- Created tasks section
+- Created events section
+- Created README file
+- Tasks and events sections only show data belonging to the logged in user
+- Tasks and events sections have full CRUD functionality
+
+## Jon Riley
+- Created friends section
+- Created new form with the ability to post new data to database from DOM
+- Created edit form with the ability to edit data in database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+
+## Trigg Summs
+- Created messages section
+- Created navbar
+- Created new form with the ability to post new data to database from DOM
+- Created edit form with the ability to edit data in database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+
+## Setup
+1. Clone this repository
+1. `cd` into the directory it creates
+1. `npm install` to install react.js
+1. Make a `database.json` file in the `api` directory, or use existing `sample.json`
+1. `cd` into `api` directory and enter `json-server -p 5002 -w database.json` to serve json file
+1. `cd` into main directory and `npm start` to make app acessable via web browser
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -3,7 +3,7 @@ import ArticleManager from '../../modules/ArticleManager';
 import './ArticleForm.css'
 
 const ArticleForm = props => {
-  const [article, setArticle] = useState({ title: "", synopsis: "", url: "",time:"1",userId:"1" });
+  const [article, setArticle] = useState({ title: "", synopsis: "", url: " ", time: "1", userId: 0 });
   const [isLoading, setIsLoading] = useState(false);
 
   //Tracks entries into text boxes
@@ -12,7 +12,10 @@ const ArticleForm = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setArticle(stateToChange);
   };
-
+  const currentUserId = sessionStorage.getItem("activeUser")
+  
+  article.userId = parseInt(currentUserId)
+  
   /*  Local method for validation, set loadingStatus, create article      object, invoke the ArticleManager post method, and redirect to the full article list
   */
   const constructNewArticle = evt => {
@@ -26,6 +29,7 @@ const ArticleForm = props => {
         .then(() => props.history.push("/articles"));
     }
   };
+  
 
   return (
     <>
@@ -49,12 +53,12 @@ const ArticleForm = props => {
             />
             <label htmlFor="url">URL</label>
 
-          <input
-            type="text"
-            required
-            onChange={handleFieldChange}
-            id="synopsis"
-            placeholder="Article synopsis"
+            <input
+              type="text"
+              required
+              onChange={handleFieldChange}
+              id="synopsis"
+              placeholder="Article synopsis"
             />
             <label htmlFor="synopsis">Synopsis</label>
           </div>

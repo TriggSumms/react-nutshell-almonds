@@ -15,6 +15,30 @@
       "time": "17:41:41 GMT-0500 (Central Daylight Time)",
       "userId": 2,
       "id": 2
+    },
+    {
+      "title": "[PC] Black & White - Any of them. ",
+      "synopsis": "test",
+      "url": "test",
+      "time": "1",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "Catch 22",
+      "synopsis": "test",
+      "url": "test",
+      "time": "1",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "Catch 22",
+      "synopsis": "test",
+      "url": "test",
+      "time": "1",
+      "userId": 1,
+      "id": 5
     }
   ],
   "events": [
@@ -51,11 +75,22 @@
       "email": "testing@testing.com",
       "password": "test",
       "id": 3
+    },
+    {
+      "email": "elindstrom42@gmail.com",
+      "password": "test",
+      "userName": "test",
+      "id": 4
+    },
+    {
+      "email": "Alright@charter.com",
+      "password": "cool",
+      "user": "Trego",
+      "id": 5
     }
   ],
   "friends": [
     {
-      "activeUserId": 2,
       "userId": 1,
       "id": 1
     },
@@ -63,15 +98,6 @@
       "activeUserId": 1,
       "userId": 3,
       "id": 2
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "name": "User 1 Task yeha",
-      "completeStatus": false,
-      "completeDate": "2020-07-03",
-      "userId": 1
     },
     {
       "name": "Another User 1 Task",
@@ -86,6 +112,13 @@
       "completeStatus": false,
       "userId": 2,
       "id": 3
+    },
+    {
+      "name": "Test2",
+      "completeStatus": false,
+      "completeDate": "2020-07-16",
+      "userId": 1,
+      "id": 4
     }
   ],
   "messages": [
@@ -93,7 +126,7 @@
       "entry": "YUS",
       "entryDate": "7/20/20, 8:04:21 AM",
       "id": 1,
-      "userId": 1
+      "userId": 2
     },
     {
       "entry": "ddddd",
@@ -105,19 +138,13 @@
       "entry": "yus sir",
       "entryDate": "7/20/20, 8:13:03 AM",
       "id": 8,
-      "userId": 2
+      "userId": 3
     },
     {
       "entry": "ddddd",
       "entryDate": "7/20/20, 9:01:59 AM",
       "id": 10,
       "userId": 1
-    },
-    {
-      "entry": "HEll Worldtrigger",
-      "entryDate": "7/20/20, 8:22:28 PM",
-      "id": 11,
-      "userId": 3
     }
   ]
 }

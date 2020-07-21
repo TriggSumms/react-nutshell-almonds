@@ -13,7 +13,7 @@ let timeStamp = new Intl.DateTimeFormat("en", {
 });
 
 const MessageForm = props => {
-    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: 0 });
+    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId:0  });
     const [isLoading, setIsLoading] = useState(false);
 
     //This will handle the changes  and grab all em messages come an "evt = event"
@@ -56,7 +56,7 @@ const MessageForm = props => {
 
     return (
         <>
-        <div className="chat__Container">
+        <div className="message__Container">
             <form >
                 <fieldset className="messageInput__Container">
                     <div className="formgrid">

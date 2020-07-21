@@ -1,5 +1,5 @@
 import React from "react";
-//import "./Home.css";
+import "./Home.css";
 
 const Home = props => {
   return (
@@ -11,13 +11,13 @@ const Home = props => {
         <div className="friend__Container">
         </div>
       </div>
-
-    
-      <div className="chat-Container">
-        <h2>Chat/Messaging Windows </h2>
-        <div className="constructedMessage-Container">
-        </div>
-      </div>
+<div className="Messaging__Containers">
+      <div className="message__ContainerFake1"></div>
+      <div className="message-Container"><h2>Chat/Messaging Windows </h2></div>
+      <div className="message__ContainerFake2"></div>
+        
+      
+</div>
     </>
   )
 };

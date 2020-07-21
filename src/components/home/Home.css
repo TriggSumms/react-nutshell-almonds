@@ -48,6 +48,31 @@
   }
 
 
+.Messaging__Containers{
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid red;
+  line-height: 200px;
+}
+
+.message__ContainerFake1{
+display:flex;
+  flex:1;
+}
+.message-Container{
+  display:flex;
+  flex:2;
+}
+
+
+
+.message__ContainerFake2{
+  display:flex;
+  flex:3;
+}
 
 
 
