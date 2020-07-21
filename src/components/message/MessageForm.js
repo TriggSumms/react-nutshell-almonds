@@ -11,23 +11,28 @@ let timeStamp = new Intl.DateTimeFormat("en", {
     dateStyle: "short"
 });
 
+
+
 const MessageForm = props => {
     const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: 0 });
     const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const clearInputs = () => {message.entry = ""}
+
+
 
     //This will handle the changes  and grab all em messages come an "evt = event"
     const handleFieldChange = evt => {
         const stateToChange = { ...message, ...user}
         stateToChange[evt.target.id] = evt.target.value;
         setMessage(stateToChange);
+        clearInputs()
+       
     }
 
-    //message.userId = sessionStorage.getItem("activeUser")
-
-
-    const currentUserId = sessionStorage.getItem("activeUser")
-    message.userId = parseInt(currentUserId)
+     
+  const currentUserId = sessionStorage.getItem("activeUser")
+    message.userId = parseInt(currentUserId) 
     
 
 
@@ -42,17 +47,9 @@ const MessageForm = props => {
             setIsLoading(true);
  
 
-/* 
-            MessageManager.post(message)
-                .then(() => {props.getMessages()
-               setIsLoading(false)})
-            */
           MessageManager.post(message)
                 .then(() => MessageManager.getAll())
-                
-                //.then(() => props.history.push("/home"))
- 
-
+                clearInputs()
                 } 
         
     };

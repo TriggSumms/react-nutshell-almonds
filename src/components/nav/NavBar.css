@@ -27,7 +27,33 @@ nav .container li {
   cursor: pointer;
 }
 
-.nav-link:hover {
-  color: #003049;
-}
+  
+  nav .container {
+    display: flex;
+    padding: 0;
+    margin-bottom: 10;
+    color: #f77f00;
+    border: dotted #f77f00;
+  }
+  
+  nav .container li {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #f77f00;
+    box-sizing: border-box;
+    background-color: #eae2b7;
+    list-style-type: none;
+  }
+  
+  .nav-link {
+    color: #f77f00;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #003049;
+  }
 

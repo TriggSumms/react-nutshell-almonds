@@ -59,27 +59,31 @@
   ],
   "users": [
     {
-      "user": "Joe",
+      "user": "Erik",
       "email": "joe@joe.com",
       "password": "test",
+      "img": "https://avatars1.githubusercontent.com/u/65562846?s=460&u=4ee0dafd8c420d9d30e0160faf91fb135a81e570&v=4",
       "id": 1
     },
     {
-      "user": "Test",
+      "user": "Trigg",
       "email": "test@test.com",
       "password": "test",
+      "img": "https://avatars1.githubusercontent.com/u/65351448?s=460&u=e4fd4abf5f5a81d0d62c128cd907a4b14d6a4670&v=4",
       "id": 2
     },
     {
-      "user": "Testing",
+      "user": "Chris",
       "email": "testing@testing.com",
       "password": "test",
+      "img": "https://avatars0.githubusercontent.com/u/65556038?s=460&u=5ed83959752884ceb418c722c556bcd624c57710&v=4",
       "id": 3
     },
     {
-      "email": "elindstrom42@gmail.com",
+      "user": "Jon",
+      "email": "testing@testing.com",
       "password": "test",
-      "userName": "test",
+      "img": "https://avatars2.githubusercontent.com/u/59340165?s=460&u=46057543931e845b54dbf360a89f24b5755cf93d&v=4",
       "id": 4
     }
   ],

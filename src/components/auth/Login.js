@@ -16,7 +16,6 @@ const Login = props => {
   
   const tryLogin = (e) => {
     e.preventDefault();
-    console.log(credentials)
     
     UserManager.getAllUsers()
       .then(users => {
@@ -31,9 +30,6 @@ const Login = props => {
         })
       })
 
-
-    // sessionStorage.setItem("credentials", JSON.stringify(credentials))
-    // sessionStorage.setItem("activeUser", 1)
 
   }
 
@@ -62,12 +58,13 @@ const Login = props => {
             <label htmlFor="inputPassword">Password</label>
           </div>
           <button type="submit">Sign in</button>
+          <div className="register">New user? &nbsp;
+      <Link to="/register"> Register a new account </Link>
+      </div>
         </fieldset>
       </form>
 
-      <div className="register">New user?
-      <Link to="/register">Register a new account</Link>
-      </div>
+      
     </div>
   );
 };
