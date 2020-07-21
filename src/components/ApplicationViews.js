@@ -98,21 +98,20 @@ const ApplicationViews = (props) => {
             }} />
 
       {/*************** EVENTS ***************/}
-
-        <Route
+      <Route
         exact
         path="/events"
         render={props => {
           return <EventList {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/new"
         render={(props) => {
           return <EventForm {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/:eventId(\d+)/edit"
         render={props => {
           if (hasUser) {
@@ -145,9 +144,6 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
-
-
-
 
         </React.Fragment>
     );
