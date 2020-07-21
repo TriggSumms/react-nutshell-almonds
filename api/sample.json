@@ -1,60 +1,28 @@
 {
   "articles": [
     {
-      "title": "Sample",
-      "synopsis": "Sample",
-      "url": "google.com",
+      "title": "Nutrition",
+      "synopsis": "Nutritionists Admit You Can Just Eat Hot Dogs And Live Like That For Basically Decades",
+      "url": "https://www.theonion.com/nutritionists-admit-you-can-just-eat-hot-dogs-and-live-1844383727",
       "time": "17:31:41 GMT-0500 (Central Daylight Time)",
       "userId": 1,
       "id": 1
     },
     {
-      "title": "Sample2",
-      "synopsis": "Sample2",
-      "url": "google.com",
+      "title": "Science",
+      "synopsis": "Physicists Hail Major Breakthrough After Discovering Neutrinos Just Little Italian Neutrons",
+      "url": "https://www.theonion.com/physicists-hail-major-breakthrough-after-discovering-ne-1844363984",
       "time": "17:41:41 GMT-0500 (Central Daylight Time)",
       "userId": 2,
       "id": 2
     },
     {
-      "title": "[PC] Black & White - Any of them. ",
-      "synopsis": "test",
-      "url": "test",
+      "title": "Nature",
+      "synopsis": "Ornithologists Attribute Owls’ Nocturnal Lifestyle To Hard Cocaine Habit",
+      "url": "https://www.theonion.com/ornithologists-attribute-owls-nocturnal-lifestyle-to-h-1844363607",
       "time": "1",
       "userId": 1,
       "id": 3
-    },
-    {
-      "title": "Catch 22",
-      "synopsis": "test",
-      "url": "test",
-      "time": "1",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "title": "Catch 22",
-      "synopsis": "test",
-      "url": "test",
-      "time": "1",
-      "userId": 1,
-      "id": 5
-    }
-  ],
-  "events": [
-    {
-      "name": "Sample",
-      "date": "2020-07-03",
-      "location": "Sample",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "name": "Sample2",
-      "date": "2020-07-034",
-      "location": "Sample2",
-      "userId": 2,
-      "id": 2
     }
   ],
   "users": [
@@ -87,15 +55,107 @@
       "id": 4
     }
   ],
-  "friends": [
+  "events": [
     {
+      "name": "Spanish Inquisition",
+      "date": "2021-07-03",
+      "location": "TBD",
       "userId": 1,
       "id": 1
     },
     {
-      "activeUserId": 1,
-      "userId": 3,
+      "name": "Bob's BBQ ",
+      "date": "2020-08-04",
+      "location": "Backyard",
+      "userId": 2,
       "id": 2
+    },
+    {
+      "name": "TEOTWAWKI",
+      "date": "2020-12-31",
+      "location": "Everywhere",
+      "userId": 3,
+      "id": 3
+    }
+  ],
+  "friends": [
+    {
+      "name": "Jon",
+      "img": "https://avatars2.githubusercontent.com/u/59340165?s=460&u=46057543931e845b54dbf360a89f24b5755cf93d&v=4",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "name": "Trigg",
+      "img": "https://avatars1.githubusercontent.com/u/65351448?s=460&u=e4fd4abf5f5a81d0d62c128cd907a4b14d6a4670&v=4",
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "name": "Chris",
+      "img": "https://avatars0.githubusercontent.com/u/65556038?s=460&u=5ed83959752884ceb418c722c556bcd624c57710&v=4",
+      "userId": 4,
+      "id": 6
+    },
+    {
+      "name": "Erik",
+      "img": "https://avatars1.githubusercontent.com/u/65562846?s=460&u=4ee0dafd8c420d9d30e0160faf91fb135a81e570&v=4",
+      "userId": 4,
+      "id": 7
+    },
+    {
+      "name": "Chris",
+      "img": "https://avatars0.githubusercontent.com/u/65556038?s=460&u=5ed83959752884ceb418c722c556bcd624c57710&v=4",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "name": "Jon",
+      "img": "https://avatars2.githubusercontent.com/u/59340165?s=460&u=46057543931e845b54dbf360a89f24b5755cf93d&v=4",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "name": "Trigg",
+      "img": "https://avatars1.githubusercontent.com/u/65351448?s=460&u=e4fd4abf5f5a81d0d62c128cd907a4b14d6a4670&v=4",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "name": "Trigg",
+      "img": "https://avatars1.githubusercontent.com/u/65351448?s=460&u=e4fd4abf5f5a81d0d62c128cd907a4b14d6a4670&v=4",
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "name": "Erik",
+      "img": "https://avatars1.githubusercontent.com/u/65562846?s=460&u=4ee0dafd8c420d9d30e0160faf91fb135a81e570&v=4",
+      "userId": 3,
+      "id": 12
+    },
+    {
+      "name": "Jon",
+      "img": "https://avatars2.githubusercontent.com/u/59340165?s=460&u=46057543931e845b54dbf360a89f24b5755cf93d&v=4",
+      "userId": 3,
+      "id": 13
+    },
+    {
+      "name": "Erik",
+      "img": "https://avatars1.githubusercontent.com/u/65562846?s=460&u=4ee0dafd8c420d9d30e0160faf91fb135a81e570&v=4",
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "name": "Chris",
+      "img": "https://avatars0.githubusercontent.com/u/65556038?s=460&u=5ed83959752884ceb418c722c556bcd624c57710&v=4",
+      "userId": 2,
+      "id": 15
+    },
+    {
+      "name": "Matt",
+      "img": "https://media1.tenor.com/images/bebd3030a88165eb88d37e29b863baf7/tenor.gif?itemid=4456492",
+      "userId": 3,
+      "id": 16
     }
   ],
   "tasks": [

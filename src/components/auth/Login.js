@@ -16,18 +16,23 @@ const Login = props => {
   
   const tryLogin = (e) => {
     e.preventDefault();
-    
+    let loginAccepted = false
     UserManager.getAllUsers()
       .then(users => {
         users.find(user => {
           if (user.user === credentials.user && user.password === credentials.password) {
+            loginAccepted = true
             sessionStorage.setItem("credentials", JSON.stringify(credentials))
             sessionStorage.setItem("activeUser", user.id)
             props.setUser(credentials)
             props.history.push("/home")
           }
+          
 
         })
+        if(loginAccepted === false) {
+          window.alert("Incorrect username or password")
+        }
       })
 
 
