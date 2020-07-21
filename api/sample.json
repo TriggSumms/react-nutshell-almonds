@@ -92,7 +92,9 @@
       "activeUserId": 1,
       "userId": 3,
       "id": 2
-    },
+    }
+  ],
+  "tasks": [
     {
       "name": "Another User 1 Task",
       "completeDate": "2020-07-03",
