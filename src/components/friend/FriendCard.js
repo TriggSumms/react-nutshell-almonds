@@ -13,7 +13,7 @@ const FriendCard = (props) => {
               {props.friend.name}
           </span>
         </h3>
-        <button type="button" onClick={() => props.deleteFriend(props.friend.id)}>Delete Friend</button>
+        <button class="delete-friend" type="button" onClick={() => props.deleteFriend(props.friend.id)}>Delete Friend</button>
       </div>
     </div>
   );

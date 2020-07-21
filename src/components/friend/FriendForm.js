@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react"
-import FriendManager from "../../modules/FriendManager"
+import React, { useState } from 'react';
+import FriendManager from '../../modules/FriendManager';
+import './FriendForm.css';
 
 const FriendForm = props => {
-    const [friend, setFriend] = useState({ name: "", userId: "" });
+    const [friend, setFriend] = useState({ name: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = evt => {
@@ -11,41 +12,21 @@ const FriendForm = props => {
         setFriend(stateToChange);
     };
 
-    const updateExistingFriend = evt => {
-        evt.preventDefault()
-        setIsLoading(true);
-
-    // This is an edit, so we need the id
-    const newFriend = {
-        id: props.match.params.taskId,
-        name: friend.name,
-        userId: friend.userId
+    /* Local method for validation, set loadingStatus, create friend object, invoke the FriendManager post method, and redirect to the full friend list */
+    const constructNewFriend = evt => {
+        evt.preventDefault();
+        if (friend.name === "") {
+            window.alert("Please complete all fields");
+        } else {
+            setIsLoading(true);
+            // Create the friend and redirect user to friend list
+            FriendManager.post(friend)
+                .then(() => props.history.push("/home"));
+        }
     };
 
-    FriendManager.update(newFriend)
-        .then(() => props.history.push("/friends"))
-    };
-    const constructNewfriend = evt => {
-      evt.preventDefault();
-      if (friend.name === "") {
-        window.alert("Please input an friend name");
-      } else {
-        setIsLoading(true);
-        // Create the friend and redirect user to friend list
-        FriendManager.post(friend)
-          .then(() => props.history.push("/home")); //sends the user back to "home" after adding friend
-      }
-    };
-
-    useEffect(() => {
-        FriendManager.get(props.match.params.taskId)
-            .then(friend => {
-                setFriend(friend);
-                setIsLoading(false);
-            });
-    }, []);
-
-    friend.userId = sessionStorage.getItem("activeUser");
+    const activeId = sessionStorage.getItem("activeUser")
+    friend.userId = parseInt(activeId)
   return (
     <>
       <form>
@@ -72,7 +53,7 @@ const FriendForm = props => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewfriend}
+              onClick={constructNewFriend}
             >Save</button>
           </div>
         </fieldset>
