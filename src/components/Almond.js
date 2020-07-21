@@ -15,7 +15,7 @@ const Almond = () => {
 
   const setUser = user => {
     sessionStorage.setItem("credentials", JSON.stringify(user));
-    sessionStorage.setItem("activeUser", 1);
+    sessionStorage.setItem("activeUser", user.id);
     //Added an active user, in which will be temporarily tied to our first User in the Sample API....
     //Maybe I should push the activeUser to local storage?
 

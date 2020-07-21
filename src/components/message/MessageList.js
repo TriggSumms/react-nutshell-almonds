@@ -54,7 +54,8 @@ const MessageList = (props) => {
                             
                             )}
             </div>
-     <div><MessageForm {...props} /></div>
+
+     <div><MessageForm {...props}getMesssages={getMessages} /></div>
 
         </>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-//import MessageList from "./MessageList"
+
 import "./MessageCard.css"
 
 const MessageCard = props => {
@@ -13,8 +13,9 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
         <div className="constructedMessage-Container">
             <div className="constructedMessageCard">
                 <div className="messageCard-content">
-              <h3 className="messageCard-content__User"> <strong>{props.message.user}</strong></h3>     
-                    {/* <picture class="messageProfile__Picture"><img src={require(`./${props.user.picture}`)} alt={props.user.userId} /></picture> */}
+              <h3 className="messageCard-content__User"> <strong>{props.message.user}</strong></h3> 
+ 
+                   {/* <picture class="messageProfile__Picture"><img src={require(`./${props.message.picture}`)} alt={props.message.picture} /></picture>  */}
                     <h3 className="messageCard-content__EntryDate">{props.message.entryDate}</h3>
                     <h4 className="messageCard-content__Entry">{props.message.entry}</h4>
                 </div>
@@ -33,8 +34,8 @@ const currentUser = parseInt(sessionStorage.getItem("activeUser"))
             
                 <div className="constructedMessageCard">
                     <div className="messageCard-content">
-                        <h3 className="messageCard-content__User"><strong>{props.message.userId}</strong><h3 className="messageCard-content__EntryDate">{props.message.entryDate}</h3></h3>
-                        
+                        <h3 className="messageCard-content__User"><strong>{props.message.userId}</strong></h3>
+                        <h3 className="messageCard-content__EntryDate">{props.message.entryDate}</h3>
                         <h4 className="messageCard-content__Entry">{props.message.entry}</h4>
                     </div>
                 </div>

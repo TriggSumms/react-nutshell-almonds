@@ -5,7 +5,6 @@ import MessageCard from '../message/MessageCard';
 
 
 
-
 //Method for Creating Time Stamp in readeable form(mdn docs)...
 let timeStamp = new Intl.DateTimeFormat("en", {
     timeStyle: "medium",
@@ -13,7 +12,7 @@ let timeStamp = new Intl.DateTimeFormat("en", {
 });
 
 const MessageForm = props => {
-    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId:0  });
+    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: 0 });
     const [isLoading, setIsLoading] = useState(false);
 
     //This will handle the changes  and grab all em messages come an "evt = event"
@@ -29,7 +28,7 @@ const MessageForm = props => {
 
 
     const currentUserId = sessionStorage.getItem("activeUser")
-    MessageCard.userId = parseInt(currentUserId)
+    message.userId = parseInt(currentUserId)
 
 
 
@@ -41,18 +40,22 @@ const MessageForm = props => {
         } else {
             // This is in place to control the user(s) clicks and too  make sure were not flooded with new messages
             setIsLoading(true);
-
+ 
 
 
             MessageManager.post(message)
+                .then(() => props.getMessages()
+                .then(()=> setIsLoading(false))
+           
+    /*             MessageManager.post(message)
                 .then(() => MessageManager.getAll())
                 .then(() => props.history.push("/home"))
+ */
 
-
-
-
-        }
+                )} 
+        
     };
+
 
     return (
         <>

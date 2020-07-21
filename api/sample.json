@@ -81,12 +81,6 @@
       "password": "test",
       "userName": "test",
       "id": 4
-    },
-    {
-      "email": "Alright@charter.com",
-      "password": "cool",
-      "user": "Trego",
-      "id": 5
     }
   ],
   "friends": [
@@ -98,7 +92,9 @@
       "activeUserId": 1,
       "userId": 3,
       "id": 2
-    },
+    }
+  ], 
+  "Tasks":[
     {
       "name": "Another User 1 Task",
       "completeDate": "2020-07-03",
