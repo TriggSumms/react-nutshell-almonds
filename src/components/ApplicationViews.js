@@ -13,15 +13,9 @@ import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";
 import TaskForm from './task/TaskForm';
 import TaskEditForm from './task/TaskEditForm';
-<<<<<<< HEAD
-import UserList from "./auth/UserList"
-import UserEditForm from "./auth/UserEditForm"
-
-=======
 import EventList from "./event/EventList";
 import EventForm from './event/EventForm';
 import EventEditForm from './event/EventEditForm';
->>>>>>> master
 
 
 // Check if credentials are in session storage returns true/false
@@ -44,26 +38,9 @@ const ApplicationViews = (props) => {
       <Route path="/login" render={props => {
         return <Login setUser={setUser} {...props} />
       }} />
-<<<<<<< HEAD
-     <Route 
-      path="/home"
-      render={props => {
-        return <UserList {...props} />;
-      }} />
-      <Route
-        path="/users/:userId(\d+)/edit"
-        render={props => {
-          if (hasUser) {
-            return <UserEditForm {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
-        }} />
-=======
       <Route path="/register" render={props => {
         return <Register setUser={setUser} {...props} />
       }} />
->>>>>>> master
       <Route
         path="/home"
         render={props => {
