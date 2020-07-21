@@ -7,7 +7,6 @@ import Login from "./auth/Login";
 import Register from "./auth/Register"
 import FriendList from "./friend/FriendList"
 import MessageList from "./message/MessageList"
-import MessageForm from "./message/MessageForm"
 import MessageEditForm from "./message/MessageEditForm"
 import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";

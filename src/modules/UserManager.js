@@ -19,7 +19,7 @@ export default {
     },
     createUser: (newUser) => {
 
-		console.log(newUser);
+		
 		return fetch(`${remoteURL}/users`, {
 			method: "POST",
 			headers: {
@@ -27,7 +27,7 @@ export default {
 			},
 			body: JSON.stringify(newUser)
         })
-        // .then(response => response.json())
+        
 
 	}
 };
