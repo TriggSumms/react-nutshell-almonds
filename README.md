@@ -7,11 +7,14 @@ Concepts covered in this project include: session storage, creating a JSON datab
 PICTURE GOES HERE
 
 ## Erik Lindstrom
+- Created registration page and process
+- Modified login page to require accurate username and password
 - Created articles section
 - Fetched article data from database to display on DOM
 - Created new form with the ability to post new data to database from DOM
 - Created delete button with the ability to delete events object in database from DOM
 - Added functionality to only allow articles belonging to logged in user to be deleted
+
 
 ## Christopher McColgan
 - Created tasks section
