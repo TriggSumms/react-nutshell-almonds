@@ -4,7 +4,6 @@
 /*Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
@@ -54,4 +53,22 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.friend-section-content {
+  padding: 1.4em;
+}
+
+.friend-container-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  background-color: #eae2b7;
+  color: #003049;
+}
+
+.delete-friend {
+  background-color: #003049;;
 }

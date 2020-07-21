@@ -4,7 +4,7 @@ import "./ArticleCard.css"
 
 const ArticleCard = props => {
 
-//makes sure that userid is an integer
+    //makes sure that userid is an integer
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
     if (props.article.userId == currentUser) {
 
@@ -15,14 +15,6 @@ const ArticleCard = props => {
                     <div className="nameDate">
 
                     </div>
-
-
-                    <div className="article__deleteButton">
-
-                        <button type="button" onClick={() => props.deleteArticle(props.article.id)}>Delete</button>
-                    </div>
-
-
                 </div>
                 <div className="articleTitle">
                     <h3>
@@ -32,6 +24,10 @@ const ArticleCard = props => {
                 </div>
                 <div className="article__description">
                     <p>{props.article.synopsis}</p>
+                </div>
+                <div className="article__deleteButton">
+
+                    <button type="button" onClick={() => props.deleteArticle(props.article.id)}>Delete</button>
                 </div>
             </div>
 

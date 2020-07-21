@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MessageManager from '../../modules/MessageManager';
+import MessageCard from '../message/MessageCard';
 //import MessageList from './MessageList'
 
 
@@ -12,7 +13,7 @@ let timeStamp = new Intl.DateTimeFormat("en", {
 });
 
 const MessageForm = props => {
-    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId: "" });
+    const [message, setMessage] = useState({ entry: "", entryDate: timeStamp.format(Date.now()), id: "", userId:0  });
     const [isLoading, setIsLoading] = useState(false);
 
     //This will handle the changes  and grab all em messages come an "evt = event"
@@ -24,8 +25,11 @@ const MessageForm = props => {
 
     //const activeUser = JSON.parse(sessionStorage.getItem("credentials"))
 
-    message.userId = sessionStorage.getItem("activeUser")
+    //message.userId = sessionStorage.getItem("activeUser")
 
+
+    const currentUserId = sessionStorage.getItem("activeUser")
+    MessageCard.userId = parseInt(currentUserId)
 
 
 
@@ -52,35 +56,30 @@ const MessageForm = props => {
 
     return (
         <>
-            <form>
-                <fieldset>
+        <div className="message__Container">
+            <form >
+                <fieldset className="messageInput__Container">
                     <div className="formgrid">
                         <label htmlFor="entry">Start your Chat!</label>
                         <input
                             type="hidden"
                             required
                             onChange={handleFieldChange}
-                            id="userId"   
+                            id="userId"
+                            value={message.userId}   
                         />
                         <input
-                            type="text"
+                            type="textarea"
                             required
                             onChange={handleFieldChange}
                             id="entry"
                             placeholder="Write your message Here..."
+                            rows="75" cols="100"
                         ></input>
-{/*         <label htmlFor="entryDate">Entry Date</label>
-            <input
-              type="date"
-              required
-              onChange={handleFieldChange}
-              id="entryDate"
-              placeholder="Date"
-            ></input> 
-*/}
                     </div>
                     <div className="alignRight">
                         <button
+                        className="messageSubmit__button"
                             type="button"
                             disabled={isLoading}
                             onClick={constructNewMessage}
@@ -88,6 +87,7 @@ const MessageForm = props => {
                     </div>
                 </fieldset>
             </form>
+        </div>
         </>
     )
 

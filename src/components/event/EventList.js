@@ -28,13 +28,7 @@ const EventList = (props) => {
     // Finally we use map() to "loop over" the events array to show a list of event cards
     return (
         <>
-            <section className="section-content">
-                <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/events/new") }}>
-                    New Event
-                </button>
-            </section>
+            
 
             <div className="container-cards">
                 {events.map(event => {
@@ -50,6 +44,13 @@ const EventList = (props) => {
                     }
                 })}
             </div>
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/events/new") }}>
+                    New Event
+                </button>
+            </section>
         </>
     );
 };
