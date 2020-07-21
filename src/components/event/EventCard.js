@@ -1,5 +1,4 @@
 import React from "react";
-import "./EventCard.css";
 
 const EventCard = props => {
 
