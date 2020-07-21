@@ -27,14 +27,6 @@ const UserEditForm = props => {
         .then(() => props.history.push("/users"))
     }
 
-    // useEffect(() => {
-    //     UserManager.get(props.match.params.userId)
-    //         .then(user => {
-    //             setUser(user);
-    //             setIsLoading(false);
-    //         });
-    // }, []);
-
     return (
         <>
             <form>

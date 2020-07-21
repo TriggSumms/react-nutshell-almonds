@@ -7,7 +7,6 @@ import Login from "./auth/Login";
 import Register from "./auth/Register"
 import FriendList from "./friend/FriendList"
 import MessageList from "./message/MessageList"
-import MessageForm from "./message/MessageForm"
 import MessageEditForm from "./message/MessageEditForm"
 import FriendForm from "./friend/FriendForm"
 import TaskList from "./task/TaskList";
@@ -104,21 +103,20 @@ const ApplicationViews = (props) => {
             }} />
 
       {/*************** EVENTS ***************/}
-
-        <Route
+      <Route
         exact
         path="/events"
         render={props => {
           return <EventList {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/new"
         render={(props) => {
           return <EventForm {...props} />
         }} />
-        
-        <Route
+      
+      <Route
         path="/events/:eventId(\d+)/edit"
         render={props => {
           if (hasUser) {
@@ -151,9 +149,6 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />
           }
         }} />
-
-
-
 
         </React.Fragment>
     );

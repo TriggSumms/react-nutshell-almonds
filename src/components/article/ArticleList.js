@@ -19,7 +19,6 @@ const ArticleList = (props) => {
   // got the articles from the API on the component's first render
 
   const deleteArticle = (id) => {
-    console.log("deleting" + id)
     ArticleManager.delete(id)
       .then(() => ArticleManager.getAll().then(setArticles));
   };

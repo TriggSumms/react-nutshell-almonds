@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import the components we will need
 import FriendCard from './FriendCard';
 import FriendManager from '../../modules/FriendManager';
 
