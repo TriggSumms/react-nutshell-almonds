@@ -22,7 +22,7 @@ const MessageList = (props) => {
                 return a - b;
             });
             setMessages(messagesFromAPI)
-        }).then(getMessages)
+        })
     };
 
 
