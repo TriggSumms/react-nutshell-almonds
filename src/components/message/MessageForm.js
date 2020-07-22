@@ -49,6 +49,7 @@ const MessageForm = props => {
 
           MessageManager.post(message)
                 .then(() => MessageManager.getAll())
+                window.location.reload(true)
                 //clearInputs()
                 } 
         
