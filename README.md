@@ -4,8 +4,6 @@ Team Almond was tasked with creating a social media app with CRUD functionality 
 
 Concepts covered in this project include: session storage, creating a JSON database, CRUD functionality with API fetch calls to JSON server, associating that data with a userID, JavaScript, HTML, CSS, React.js.
 
-PICTURE GOES HERE
-
 ## Erik Lindstrom
 - Created registration page and process
 - Modified login page to require accurate username and password
