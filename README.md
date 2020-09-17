@@ -28,11 +28,12 @@ Concepts covered in this project include: session storage, creating a JSON datab
 - Created delete button with the ability to delete events object in database from DOM
 
 ## Trigg Summs
-- Created messages section
+- Created messages section (*Showing multiple users information)
 - Created navbar
 - Created new form with the ability to post new data to database from DOM
 - Created edit form with the ability to edit data in database from DOM
 - Created delete button with the ability to delete events object in database from DOM
+- Created registration page and assisted in the process of validating a users credentials, as well as showing user specific data via session storage
 
 ## Setup
 1. Clone this repository
