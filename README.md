@@ -1,3 +1,14 @@
+<br/>
+<p align="center">
+    <a >
+        <img width="50%" src="https://res.cloudinary.com/triggsumms/image/upload/v1601694807/gdajoj3dzf3afianoyzk.png"  alt="TRACKER logo">
+    </a>
+</p>
+
+<br/>
+
+
+
 # Team Almond's Group Project: Nutshell 2
 
 Team Almond was tasked with creating a social media app with CRUD functionality utilizing React.js using the criteria listed below.
